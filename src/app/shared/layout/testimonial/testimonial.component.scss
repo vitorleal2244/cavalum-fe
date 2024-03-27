@@ -1,0 +1,67 @@
+@import "../../../../assets/css/variables";
+
+#testimonials-wrapper {
+  margin-top: $sector_separator_padding;
+  background-color: $black;
+  color: $white;
+
+  .testimonial {
+
+    &__text-wrapper {
+      text-align: center;
+      padding: $gap;
+    }
+
+    &__item {
+      display: none;
+    }
+
+    &__item.active {
+      display: block;
+    }
+
+    &__description {
+      padding: $gap $gap_sides;
+
+
+      p {
+        font-size: 15px;
+      }
+    }
+
+    &__author {
+      padding: 0 0 $gap;
+    }
+
+    &__bullets {
+
+      ol {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+        padding-left: 30px;
+
+        li::marker {
+          color: $green;
+        }
+
+        li {
+          list-style: disc;
+          cursor: pointer;
+        }
+
+        li.active {
+          list-style: circle;
+        }
+      }
+    }
+
+    &__image {
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

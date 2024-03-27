@@ -1,0 +1,41 @@
+@import '../../../../assets/css/variables';
+
+.button {
+  padding: 10px 30px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.primary,
+.primary-black {
+  background-color: $white;
+  color: $black;
+  border: 1px solid $black;
+  transition: all 0.5s ease;
+}
+
+.secondary {
+  background-color: $green;
+  color: $black;
+  border: 1px solid $black;
+  transition: all 0.5s ease;
+}
+
+.primary:hover {
+  background-color: transparent;
+  border: 1px solid $white;
+  color: $white;
+  transition: all 0.5s ease;
+}
+
+.primary-black:hover {
+  background-color: $black;
+  border: 1px solid $black;
+  color: $white;
+  transition: all 0.5s ease;
+}
+
+.secondary:hover {
+  background-color: $dark_green;
+  transition: all 0.5s ease;
+}

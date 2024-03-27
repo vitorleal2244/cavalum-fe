@@ -1,0 +1,2 @@
+<button *ngIf="type === 'button'" type='button' class='button {{ class }}'><ng-content></ng-content></button>
+<a *ngIf="type === 'link'" href="{{ link }}" class='{{ class }}' target='{{ change_page }}'><ng-content></ng-content></a>

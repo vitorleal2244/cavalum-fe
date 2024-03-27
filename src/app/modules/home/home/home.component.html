@@ -1,2 +1,123 @@
-<app-tab-bar></app-tab-bar>
-<app-slider></app-slider>
+<app-tab-bar />
+<app-slider>
+  <div id='slider-buttons'>
+    <app-button
+      [type]="'link'"
+      [class]="'button primary'"
+      [link]="'https://www.google.pt'"
+      [change_page]="'_blank'">
+      Saiba mais
+    </app-button>
+  </div>
+</app-slider>
+<div class="container">
+  <div id="our-actions-wrapper">
+    <div class="row">
+      <div class="col-md-5 our-actions-image">
+        <img src="/assets/images/img1.jpg" alt="Imagem grupo" title="Imagem grupo" />
+      </div>
+      <div class="col-md-7 our-actions">
+        <div class="our-actions__title">
+          <h2>Nossas ações</h2>
+        </div>
+        <div class="our-actions__list">
+          <ul>
+            <li class="action-item">
+              <div class="action-info">
+                <h3>Meio dia na neve</h3>
+                <p>Oferecido diariamente</p>
+                <p>80€</p>
+              </div>
+              <div class="action-link">
+                <app-button
+                  [type]="'link'"
+                  [class]="'button secondary'"
+                  [link]="'https://www.google.com'"
+                  [change_page]="'_blank'">
+                    Agendar agora
+                </app-button>
+              </div>
+            </li>
+            <li class="action-item">
+              <div class="action-info">
+                <h3>Meio dia na neve</h3>
+                <p>Oferecido diariamente</p>
+                <p>80€</p>
+              </div>
+              <div class="action-link">
+                <app-button
+                  [type]="'link'"
+                  [class]="'button secondary'"
+                  [link]="'https://www.google.com'"
+                  [change_page]="'_blank'">
+                    Agendar agora
+                </app-button>
+              </div>
+            </li>
+            <li class="action-item">
+              <div class="action-info">
+                <h3>Meio dia na neve</h3>
+                <p>Oferecido diariamente</p>
+                <p>80€</p>
+              </div>
+              <div class="action-link">
+                <app-button
+                  [type]="'link'"
+                  [class]="'button secondary'"
+                  [link]="'https://www.google.com'"
+                  [change_page]="'_blank'">
+                    Agendar agora
+                  </app-button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="know-more-wrapper">
+    <h1>Fique por dentro</h1>
+    <p class="subtitle">
+      Mantenha-se atualizado sobre as últimas notícias e informações sobre o meio ambiente e a sustentabilidade. Clique aqui para ler mais.
+    </p>
+    <div class="know-more__topics">
+      <ul>
+        <li>
+          <div class="know-more__icon">
+            <app-man-walking-svg [size]="'75px'" />
+          </div>
+          Participe
+        </li>
+        <li>
+          <div class="know-more__icon">
+            <app-svg-medical-case [size]="'100px'" />
+          </div>
+          Contribua
+        </li>
+        <li>
+          <div class="know-more__icon">
+            <app-svg-man-child [size]="'100px'" />
+          </div>
+          Transforme
+        </li>
+        <li>
+          <div class="know-more__icon">
+            <app-svg-map [size]="'100px'" />
+          </div>
+          Seja a mudança
+        </li>
+      </ul>
+    </div>
+    <app-button
+      [type]="'link'"
+      [class]="'button primary-black'"
+      [link]="'https://www.google.pt'"
+      [change_page]="'_blank'">
+      Saiba como
+    </app-button>
+  </div>
+  <app-testimonial [testimonials]="testimonials" />
+  <app-news />
+  <app-last-updates />
+</div>
+<app-footer />
