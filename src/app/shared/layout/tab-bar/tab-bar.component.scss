@@ -1,13 +1,10 @@
 #tab-bar-wrapper {
   background-color: #000000;
   padding: 0 200px;
-
-  &.fixed {
-    position: fixed;
-    width: 100%;
-    display: inline;
-    z-index: 1;
-  }
+  position: fixed;
+  width: 100%;
+  display: inline;
+  z-index: 1;
 
   &.hidden {
     display: none;
