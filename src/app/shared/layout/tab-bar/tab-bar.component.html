@@ -1,4 +1,4 @@
-<div id="tab-bar-wrapper">
+<div id="tab-bar-wrapper" [class.fixed]="navFixed">
   <div class="row">
     <div class="col-6 tab-bar__logo ">
       <div class="logo-wrapper">
@@ -24,7 +24,9 @@
             <a href="#">Contato</a>
           </li>
           <li class="login-item">
-            <a href="#">Login</a>
+            <a href="#">
+              <span class="material-symbols-outlined">person</span> Login
+            </a>
           </li>
         </ul>
       </nav>
