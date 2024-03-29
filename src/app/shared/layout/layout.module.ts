@@ -11,7 +11,6 @@ import { CardComponent } from './card/card.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { NewsComponent } from './news/news.component';
 import { FooterComponent } from './footer/footer.component';
-import { LastUpdatesComponent } from './last-updates/last-updates.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { LastUpdatesComponent } from './last-updates/last-updates.component';
     CardComponent,
     GalleryComponent,
     NewsComponent,
-    LastUpdatesComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -37,7 +35,6 @@ import { LastUpdatesComponent } from './last-updates/last-updates.component';
     CardComponent,
     GalleryComponent,
     NewsComponent,
-    LastUpdatesComponent,
     FooterComponent
   ]
 })

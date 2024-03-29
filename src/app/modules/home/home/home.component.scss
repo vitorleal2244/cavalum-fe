@@ -7,53 +7,56 @@
   height: 100%;
 }
 
-#our-actions-wrapper {
+#home-our-actions {
   margin-top: -100px;
-  background-color: $black;
-  margin-bottom: 10px;
 
-  .our-actions-image {
+  .our-actions-wrapper {
+    background-color: $black;
+    margin-bottom: 10px;
 
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
+    .our-actions-image {
 
-  .our-actions {
-    color: $white;
-    padding: 50px 100px;
-    margin-left: -12px;
-
-    &__title {
-      padding-bottom: 30px;
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
 
-    &__list {
+    .our-actions {
+      color: $white;
+      padding: 50px 100px;
+      margin-left: -12px;
 
-      ul {
-        list-style-type: none;
+      &__title {
+        padding-bottom: 30px;
+      }
 
-        li.action-item {
-          display: flex;
-          flex-direction: row;
-          gap: $gap;
-          padding-bottom: $gap;
+      &__list {
 
-          .action-info {
-            width: 100%;
+        ul {
+          list-style-type: none;
 
-            p {
-              font-size: 13px;
-              padding-bottom: 12px;
-            }
-          }
-
-          .action-link {
-            padding-top: 22px;
-            width: 100%;
+          li.action-item {
             display: flex;
-            justify-content: flex-end;
+            flex-direction: row;
+            gap: $gap;
+            padding-bottom: $gap;
+
+            .action-info {
+              width: 100%;
+
+              p {
+                font-size: 13px;
+                padding-bottom: 12px;
+              }
+            }
+
+            .action-link {
+              padding-top: 22px;
+              width: 100%;
+              display: flex;
+              justify-content: flex-end;
+            }
           }
         }
       }
@@ -61,27 +64,52 @@
   }
 }
 
-#know-more-wrapper {
+#home-know-more {
   margin-top: $sector_separator_padding;
-  text-align: center;
 
-  p.subtitle {
-    padding: $gap $gap_sides_max;
-  }
+  .know-more-wrapper {
+    text-align: center;
 
-  .know-more {
+    p.subtitle {
+      padding: $gap $gap_sides_max;
+    }
 
-    &__topics {
-      padding: 0 $gap_sides_max $gap;
+    .know-more {
 
-      ul {
-        list-style-type: none;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: center;
+      &__topics {
+        padding: 0 $gap_sides_max $gap;
+
+        ul {
+          list-style-type: none;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: center;
+        }
       }
     }
   }
+}
+
+#home-testimonials {
+  background-color: $white;
+  padding: $sector_separator_padding 0 0;
+
+  .home-testimonials {
+
+    &__background {
+      background-image: url('../../../../assets/images/home_background.JPG');
+      height: 100%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 70px 0;
+    }
+  }
+}
+
+#home-news {
+  padding: $sector_separator_padding 0;
 }
