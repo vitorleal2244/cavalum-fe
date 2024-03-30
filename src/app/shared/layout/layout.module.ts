@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 
@@ -11,6 +12,7 @@ import { CardComponent } from './card/card.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { NewsComponent } from './news/news.component';
 import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     CommonModule,
-    MdbCarouselModule
+    MdbCarouselModule,
+    RouterModule,
   ],
   exports: [
     TabBarComponent,

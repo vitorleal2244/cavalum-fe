@@ -68,11 +68,20 @@
       }
     }
 
-    &__copyright {
+    &__copyright,
+    &__gogreen {
       color: #FFFFFF;
       font-size: 12px;
       padding: $gap 10px 10px;
       text-align: center;
+    }
+
+    &__gogreen {
+      width: 100%;
+
+      img {
+        width: 200px;
+      }
     }
   }
 }
