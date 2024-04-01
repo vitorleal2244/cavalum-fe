@@ -1,0 +1,43 @@
+@import '../../../../assets/css/variables';
+
+#image-text-wrapper {
+  text-align: center;
+
+  &.left-side {
+    background-color: $dark_green;
+
+    .image-text {
+
+      &__text {
+        color: $white;
+      }
+    }
+  }
+
+  &.right-side {
+    background-color: $grey;
+  }
+
+  .image-text {
+
+    &__text {
+      padding: $gap_sides_max $gap_sides;
+
+      h2 {
+        padding-bottom: 20px;
+      }
+
+      p {
+        font-size: 15px;
+        font-weight: 200;
+      }
+    }
+
+    &__image {
+      background-attachment: scroll;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../../assets/css/variables';
+
+#about-wrapper {
+
+  .about {
+
+    &__values {
+      padding-bottom: $sector_separator_padding;
+    }
+
+    &__gallery {
+      padding-bottom: $sector_separator_padding;
+    }
+  }
+}

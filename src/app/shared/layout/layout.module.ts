@@ -12,6 +12,8 @@ import { CardComponent } from './card/card.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { NewsComponent } from './news/news.component';
 import { FooterComponent } from './footer/footer.component';
+import { ImageTextComponent } from './image-text/image-text.component';
+import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { FooterComponent } from './footer/footer.component';
     CardComponent,
     GalleryComponent,
     NewsComponent,
+    ImageTextComponent,
+    ImageViewerComponent,
     FooterComponent,
   ],
   imports: [
@@ -38,7 +42,9 @@ import { FooterComponent } from './footer/footer.component';
     CardComponent,
     GalleryComponent,
     NewsComponent,
-    FooterComponent
+    ImageTextComponent,
+    ImageViewerComponent,
+    FooterComponent,
   ]
 })
 export class LayoutModule { }

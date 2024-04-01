@@ -51,7 +51,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdbTooltipModule,
     MdbValidationModule,
     BrowserAnimationsModule,
-    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@
       <nav>
         <ul>
           <li>
-            <a href="/" routerLinkActive="active">Home</a>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
           </li>
           <li>
             <a routerLink="/about" routerLinkActive="active">Sobre</a>
@@ -24,7 +24,7 @@
             <a href="#">Notícias</a>
           </li>
           <li>
-            <a href="#">Contato</a>
+            <a routerLink="/contact" routerLinkActive="active">Contato</a>
           </li>
           <li class="login-item">
             <a href="#">

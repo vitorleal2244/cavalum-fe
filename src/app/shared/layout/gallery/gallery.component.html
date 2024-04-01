@@ -1,1 +1,41 @@
-<p>gallery works!</p>
+<div id="gallery-wrapper">
+  <div class="gallery__title">
+    <h1>Galeria de fotos</h1>
+  </div>
+  <div class="gallery__photos">
+    <div class="row">
+      <div class="column">
+        <img
+          *ngFor="let photo of photos_section_1"
+          src="{{ photo }}"
+          style="width:100%"
+          (click)="onPhotoClickHandler(photo)"
+        />
+      </div>
+      <div class="column">
+        <img
+          *ngFor="let photo of photos_section_2"
+          src="{{ photo }}"
+          style="width:100%"
+          (click)="onPhotoClickHandler(photo)"
+        />
+      </div>
+      <div class="column">
+        <img
+          *ngFor="let photo of photos_section_3"
+          src="{{ photo }}"
+          style="width:100%"
+          (click)="onPhotoClickHandler(photo)"
+        />
+      </div>
+      <div class="column">
+        <img
+          *ngFor="let photo of photos_section_4"
+          src="{{ photo }}"
+          style="width:100%"
+          (click)="onPhotoClickHandler(photo)"
+        />
+      </div>
+    </div>
+  </div>
+</div>

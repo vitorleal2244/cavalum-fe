@@ -1,1 +1,48 @@
-<p>about works!</p>
+<app-image-viewer
+  *ngIf="imageViewer"
+  [image]='imageViewer'
+  (closeViewer)='closeImageViewer($event)'
+/>
+<div class="container page-content">
+  <div id="about-wrapper">
+    <div class="page-header">
+      <div class="page-header__title">
+        <h1>Sobre o Cavalum</h1>
+      </div>
+      <div class="page-header__subtitle">
+        <p>
+          Somos uma equipe de voluntários de uma associação que tem como objetivo a defesa do meio ambiente.
+          Trabalhamos em diversas frentes, desde campanhas de conscientização até ações práticas na comunidade.
+        </p>
+      </div>
+    </div>
+    <div class="about__values">
+      <app-image-text
+        [text_side]='"left"'
+        [title]="'Nosso trabalho'"
+        [description]="'Somos uma equipe dedicada à preservação do meio ambiente. Atuamos em diversas áreas, como reflorestamento,
+        reciclagem de resíduos, monitoramento de áreas degradadas, entre outras. Nossos projetos são desenvolvidos em
+        parceria com a comunidade e entidades governamentais.'"
+        [image]="'../../../assets/images/about.jpg'"
+      />
+      <app-image-text
+        [text_side]='"right"'
+        [title]="'Voluntariado'"
+        [description]="'Acreditamos que a mudança começa por cada um de nós. Por isso, oferecemos oportunidades para que pessoas engajadas
+        possam contribuir com nossas ações. Seja participando de mutirões de limpeza ou colaborando com nossos projetos, o
+        voluntariado é fundamental para o sucesso de nossa missão.'"
+        [image]="'../../../assets/images/about2.jpg'"
+      />
+      <app-image-text
+        [text_side]='"left"'
+        [title]="'Transparência'"
+        [description]="'Acreditamos que a transparência é fundamental para a construção de uma sociedade mais justa e consciente.
+        Por isso, prestamos contas de nossas ações e recursos de forma clara e objetiva.'"
+        [image]="'../../../assets/images/about3.jpg'"
+      />
+    </div>
+    <div class="about__gallery">
+      <app-gallery [photos]='photos' (photoClick)="getPhoto($event)" />
+    </div>
+  </div>
+</div>
