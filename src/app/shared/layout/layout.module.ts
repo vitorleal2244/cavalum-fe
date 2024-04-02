@@ -14,6 +14,7 @@ import { NewsComponent } from './news/news.component';
 import { FooterComponent } from './footer/footer.component';
 import { ImageTextComponent } from './image-text/image-text.component';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
+import { ModalBgComponent } from './modal-bg/modal-bg.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
     NewsComponent,
     ImageTextComponent,
     ImageViewerComponent,
+    ModalBgComponent,
     FooterComponent,
   ],
   imports: [
@@ -44,6 +46,7 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
     NewsComponent,
     ImageTextComponent,
     ImageViewerComponent,
+    ModalBgComponent,
     FooterComponent,
   ]
 })
