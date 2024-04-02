@@ -11,6 +11,7 @@ export class ButtonComponent {
   @Input() class: string;
   @Input() link: string;
   @Input() change_page: string;
+  @Input() description: string;
 
   constructor() {
     this.type = 'button';
@@ -18,5 +19,6 @@ export class ButtonComponent {
     this.class = 'primary';
     this.link = '';
     this.change_page = '';
+    this.description = '';
   }
 }

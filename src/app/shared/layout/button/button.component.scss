@@ -21,6 +21,13 @@
   transition: all 0.5s ease;
 }
 
+.secondary-white {
+  background-color: $green;
+  color: $white;
+  border: 1px solid $white;
+  transition: all 0.5s ease;
+}
+
 .primary:hover {
   background-color: transparent;
   border: 1px solid $white;
@@ -35,7 +42,8 @@
   transition: all 0.5s ease;
 }
 
-.secondary:hover {
+.secondary:hover,
+.secondary-white:hover {
   background-color: $dark_green;
   transition: all 0.5s ease;
 }

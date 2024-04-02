@@ -1,0 +1,39 @@
+@import '../../../assets/css/variables';
+
+#contact {
+
+  .contact {
+
+    &__content {
+      padding-bottom: $sector_separator_padding;
+    }
+
+    &__form {
+      padding: $gap;
+    }
+
+    &__info {
+      background-image: url('../../../assets/images/cascata.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        padding-right: 10px;
+      }
+    }
+
+    &__info-item {
+      color: $white;
+      padding-bottom: $form_spacing;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}
