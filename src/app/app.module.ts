@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
-import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 import { ModulesModule } from './modules/modules.module';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +25,8 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScheduleComponent } from './modals/schedule/schedule.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { ScheduleComponent } from './modals/schedule/schedule.component';
     BrowserModule,
     AppRoutingModule,
     NgxSpinnerModule,
-    SharedModule,
+    CoreModule,
     ModulesModule,
     MdbAccordionModule,
     MdbCarouselModule,
@@ -53,6 +55,8 @@ import { ScheduleComponent } from './modals/schedule/schedule.component';
     MdbTooltipModule,
     MdbValidationModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [],
   bootstrap: [AppComponent]

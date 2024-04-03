@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SharedModule } from '../shared/shared.module';
 import { HomeModule } from './home/home.module';
 
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { TrailsComponent } from './trails/trails.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { TrailsComponent } from './trails/trails.component';
   ],
   imports: [
     CommonModule,
-    SharedModule,
+    CoreModule,
     HomeModule,
   ],
   exports: [

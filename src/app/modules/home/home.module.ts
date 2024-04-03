@@ -8,7 +8,7 @@ import { ManWalkingComponent } from 'src/assets/images/svg/man_walking/man_walki
 import { SvgMedicalCaseComponent } from 'src/assets/images/svg/medical_case/svg_medical_case.component';
 import { SvgManChildComponent } from 'src/assets/images/svg/man_child/svg_man_child.component';
 import { SvgMapComponent } from 'src/assets/images/svg/map/svg_map.component';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule,
+    CoreModule,
   ],
   exports: [
     HomeComponent
