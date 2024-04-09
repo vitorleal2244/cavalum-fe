@@ -13,6 +13,12 @@ import { SliderComponent } from './components/slider/slider.component';
 import { TabBarComponent } from './components/tab-bar/tab-bar.component';
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { ProductCardComponent } from './components/store/product-card/product-card.component';
+import { ProductImageSliderComponent } from './components/store/product-image-slider/product-image-slider.component';
+import { ProductInfoComponent } from './components/store/product-info/product-info.component';
+import { ProductColorsComponent } from './components/store/product-colors/product-colors.component';
+import { ProductSizesComponent } from './components/store/product-sizes/product-sizes.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +33,16 @@ import { RouterModule } from '@angular/router';
     SliderComponent,
     TabBarComponent,
     TestimonialComponent,
+    ProductCardComponent,
+    ProductImageSliderComponent,
+    ProductInfoComponent,
+    ProductColorsComponent,
+    ProductSizesComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
+    TranslateModule
   ],
   exports: [
     ButtonComponent,

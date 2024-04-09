@@ -3,7 +3,7 @@
   [image]='imageViewer'
   (closeViewer)='closeImageViewer($event)'
 />
-<div class="container page-content">
+<main class="container page-content">
   <div id="about">
     <div class="page-header">
       <div class="page-header__title">
@@ -45,4 +45,4 @@
       <app-gallery [photos]='photos' (photoClick)="getPhoto($event)" />
     </div>
   </div>
-</div>
+</main>

@@ -1,6 +1,8 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { LOCALE_ID, NgModule, isDevMode } from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { CoreModule } from './core/core.module';
 import { ModulesModule } from './modules/modules.module';
@@ -27,18 +29,29 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScheduleComponent } from './modals/schedule/schedule.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ScheduleComponent
+    ScheduleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxSpinnerModule,
+    HttpClientModule,
     CoreModule,
     ModulesModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslationLoader),
+        deps: [HttpClient]
+      },
+      defaultLanguage: 'pt'
+    }),
     MdbAccordionModule,
     MdbCarouselModule,
     MdbCheckboxModule,
@@ -58,7 +71,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StoreModule.forRoot({}, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-PT' }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
+
+export function createTranslationLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}

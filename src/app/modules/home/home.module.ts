@@ -9,6 +9,7 @@ import { SvgMedicalCaseComponent } from 'src/assets/images/svg/medical_case/svg_
 import { SvgManChildComponent } from 'src/assets/images/svg/man_child/svg_man_child.component';
 import { SvgMapComponent } from 'src/assets/images/svg/map/svg_map.component';
 import { CoreModule } from 'src/app/core/core.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CoreModule } from 'src/app/core/core.module';
   ],
   imports: [
     CommonModule,
+    TranslateModule.forChild(),
     HomeRoutingModule,
     CoreModule,
   ],
