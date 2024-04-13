@@ -1,14 +1,27 @@
 @import "../../../../assets/css/variables";
 
 #testimonials-wrapper {
-  background-color: $black;
   color: $white;
+  height: 406px;
 
   .testimonial {
 
     &__text-wrapper {
+      background-color: $black;
       text-align: center;
-      padding: $gap;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+
+    &__title {
+      padding: 40px;
+    }
+
+    &__items {
+      width: 100%;
+      padding: 10px;
     }
 
     &__item {
@@ -20,19 +33,17 @@
     }
 
     &__description {
-      padding: $gap $gap_sides;
-
+      padding: 30px 30px;
 
       p {
         font-size: 15px;
       }
     }
 
-    &__author {
-      padding: 0 0 $gap;
-    }
-
     &__bullets {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
 
       ol {
         display: flex;

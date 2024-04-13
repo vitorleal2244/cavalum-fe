@@ -12,6 +12,21 @@ const routes: Routes = [
     loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
   },
   {
+    path: 'store',
+    pathMatch: 'full',
+    loadChildren: () => import('./modules/store/store.module').then(m => m.StoreModule)
+  },
+  {
+    path: 'checkout',
+    pathMatch: 'full',
+    loadChildren: () => import('./modules/checkout/checkout.module').then(m => m.CheckoutModule)
+  },
+  {
+    path: 'auth',
+    pathMatch: 'full',
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
     path: 'about',
     pathMatch: 'full',
     component: AboutComponent
@@ -20,11 +35,6 @@ const routes: Routes = [
     path: 'trails',
     pathMatch: 'full',
     component: TrailsComponent
-  },
-  {
-    path: 'store',
-    pathMatch: 'full',
-    loadChildren: () => import('./modules/store/store.module').then(m => m.StoreModule)
   },
   {
     path: 'news',
