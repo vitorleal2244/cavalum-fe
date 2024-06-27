@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-svg-man-child',
-  templateUrl: './svg_man_child.component.svg',
-  styleUrls: []
+    selector: 'app-svg-man-child',
+    templateUrl: './svg_man_child.component.svg',
+    styleUrls: [],
+    standalone: true
 })
 export class SvgManChildComponent {
   @Input() size: string;

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrailsComponent } from './trails.component';
+import { ListTrailsComponent } from './list-trails.component';
 
 describe('TrailsComponent', () => {
-  let component: TrailsComponent;
-  let fixture: ComponentFixture<TrailsComponent>;
+  let component: ListTrailsComponent;
+  let fixture: ComponentFixture<ListTrailsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TrailsComponent]
-    });
-    fixture = TestBed.createComponent(TrailsComponent);
+    imports: [ListTrailsComponent]
+});
+    fixture = TestBed.createComponent(ListTrailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

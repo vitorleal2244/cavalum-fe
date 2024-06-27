@@ -8,25 +8,22 @@ import { ManWalkingComponent } from 'src/assets/images/svg/man_walking/man_walki
 import { SvgMedicalCaseComponent } from 'src/assets/images/svg/medical_case/svg_medical_case.component';
 import { SvgManChildComponent } from 'src/assets/images/svg/man_child/svg_man_child.component';
 import { SvgMapComponent } from 'src/assets/images/svg/map/svg_map.component';
-import { CoreModule } from 'src/app/core/core.module';
+
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [
+    imports: [
+    CommonModule,
+    TranslateModule.forChild(),
+    HomeRoutingModule,
     HomeComponent,
     ManWalkingComponent,
     SvgMedicalCaseComponent,
     SvgManChildComponent,
-    SvgMapComponent
-  ],
-  imports: [
-    CommonModule,
-    TranslateModule.forChild(),
-    HomeRoutingModule,
-    CoreModule,
-  ],
-  exports: [
-    HomeComponent
-  ]
+    SvgMapComponent,
+],
+    exports: [
+        HomeComponent
+    ]
 })
 export class HomeModule { }

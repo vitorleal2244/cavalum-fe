@@ -1,9 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+    selector: 'app-button',
+    templateUrl: './button.component.html',
+    styleUrls: ['./button.component.scss'],
+    standalone: true,
+    imports: [NgIf]
 })
 export class ButtonComponent {
   @Input() type: string;

@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-man-walking-svg',
-  templateUrl: './man_walking.component.svg',
-  styleUrls: []
+    selector: 'app-man-walking-svg',
+    templateUrl: './man_walking.component.svg',
+    styleUrls: [],
+    standalone: true
 })
 export class ManWalkingComponent {
   @Input() size: string;

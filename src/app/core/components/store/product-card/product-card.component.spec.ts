@@ -8,8 +8,8 @@ describe('ProductCardComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ProductCardComponent]
-    });
+    imports: [ProductCardComponent]
+});
     fixture = TestBed.createComponent(ProductCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

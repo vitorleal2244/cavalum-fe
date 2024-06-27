@@ -5,19 +5,16 @@ import { TranslateModule } from '@ngx-translate/core';
 import { StoreRoutingModule } from './store-routing.module';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
-import { CoreModule } from 'src/app/core/core.module';
+
 
 
 @NgModule({
-  declarations: [
-    ListComponent,
-    DetailComponent
-  ],
-  imports: [
+    imports: [
     CommonModule,
     StoreRoutingModule,
     TranslateModule,
-    CoreModule,
-  ]
+    ListComponent,
+    DetailComponent,
+]
 })
 export class StoreModule { }

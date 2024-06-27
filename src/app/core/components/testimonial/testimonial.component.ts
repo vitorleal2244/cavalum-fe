@@ -1,10 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { Testimonial } from 'src/app/core/interfaces/testimonial';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-testimonial',
-  templateUrl: './testimonial.component.html',
-  styleUrls: ['./testimonial.component.scss']
+    selector: 'app-testimonial',
+    templateUrl: './testimonial.component.html',
+    styleUrls: ['./testimonial.component.scss'],
+    standalone: true,
+    imports: [NgFor, NgClass]
 })
 export class TestimonialComponent {
   @Input() testimonials: Array<Testimonial> = [];

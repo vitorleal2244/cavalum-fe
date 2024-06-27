@@ -8,8 +8,8 @@ describe('TabBarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TabBarComponent]
-    });
+    imports: [TabBarComponent]
+});
     fixture = TestBed.createComponent(TabBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

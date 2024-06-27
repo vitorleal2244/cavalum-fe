@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { ProductCardComponent } from '../../../core/components/store/product-card/product-card.component';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+    selector: 'app-list',
+    templateUrl: './list.component.html',
+    styleUrls: ['./list.component.scss'],
+    standalone: true,
+    imports: [ProductCardComponent]
 })
 export class ListComponent {
   public products = [

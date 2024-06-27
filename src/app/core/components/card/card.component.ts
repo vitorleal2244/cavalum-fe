@@ -1,28 +1,26 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
-import { ScheduleComponent } from 'src/app/modals/schedule/schedule.component';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+    selector: 'app-card',
+    templateUrl: './card.component.html',
+    styleUrls: ['./card.component.scss'],
+    standalone: true,
+    imports: [ButtonComponent]
 })
 export class CardComponent {
   @Input({ required: true }) title: string = '';
   @Input() button_text: string = '';
   @Input() image: string = '';
-  @Output() modal_bg_open = new EventEmitter<boolean>();
+  @Input() link: string = '';
 
-  modalRef: MdbModalRef<ScheduleComponent> | null = null;
+  constructor(
+    private _route: Router
+  ) {}
 
-  constructor(private modalService: MdbModalService) {}
-
-  openModal() {
-    this.modalRef = this.modalService.open(ScheduleComponent);
-    this.modal_bg_open.emit(true);
-    this.modalRef.onClose.subscribe((message: any) => {
-      console.log(message);
-      this.modal_bg_open.emit(false);
-    });
+  public goToLink() {
+    this._route.navigateByUrl(this.link);
   }
 }
