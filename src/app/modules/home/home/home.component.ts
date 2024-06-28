@@ -1,3 +1,11 @@
+/*
+ * File: home.component.ts
+ * Project: Cavalum
+ * Created: Saturday, 27th April 2024 6:00:17 pm
+ * Last Modified: Friday, 28th June 2024 10:42:49 am
+ * Copyright © 2024 Vitor Leal
+ */
+
 import { Component } from '@angular/core';
 import { NewsComponent } from '../../../core/components/news/news.component';
 import { TestimonialComponent } from '../../../core/components/testimonial/testimonial.component';
@@ -9,20 +17,20 @@ import { ButtonComponent } from '../../../core/components/button/button.componen
 import { SliderComponent } from '../../../core/components/slider/slider.component';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
-    standalone: true,
-    imports: [
-        SliderComponent,
-        ButtonComponent,
-        ManWalkingComponent,
-        SvgMedicalCaseComponent,
-        SvgManChildComponent,
-        SvgMapComponent,
-        TestimonialComponent,
-        NewsComponent,
-    ],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  standalone: true,
+  imports: [
+    SliderComponent,
+    ButtonComponent,
+    ManWalkingComponent,
+    SvgMedicalCaseComponent,
+    SvgManChildComponent,
+    SvgMapComponent,
+    TestimonialComponent,
+    NewsComponent,
+  ],
 })
 export class HomeComponent {
   testimonials = [

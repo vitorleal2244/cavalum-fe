@@ -1,27 +1,43 @@
 @import '../../../../assets/css/variables';
 
+:host {
+  margin: 0 20px;
+}
+
 #image-text-wrapper {
   text-align: center;
 
   &.left-side {
-    background-color: $dark_green;
-
+    
     .image-text {
 
       &__text {
         color: $white;
+        background-color: $dark_green;
       }
     }
   }
 
   &.right-side {
-    background-color: $grey;
+
+    .image-text {
+
+      &__text {
+        background-color: $grey;
+        border: 1px solid $dark_green;
+      }
+    }
   }
 
   .image-text {
 
     &__text {
-      padding: $gap_sides_max $gap_sides;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+      padding: 0 70px;
 
       h2 {
         padding-bottom: 20px;
@@ -34,10 +50,11 @@
     }
 
     &__image {
-      background-attachment: scroll;
-      background-repeat: no-repeat;
-      background-size: cover;
-      overflow: hidden;
+      
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }

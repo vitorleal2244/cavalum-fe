@@ -1,24 +1,38 @@
-<div id='image-text-wrapper' [ngClass]="{'left-side': text_side === 'left', 'right-side': text_side === 'right'}">
-  <div class='row'>
-    <div
-      class='col-md-6'
-      [ngClass]="{'image-text__text': text_side === 'left', 'image-text__image': text_side === 'right'}"
-      [ngStyle]="{'background-image': text_side === 'right' ? 'url(' + image + ')' : 'none'}"
-    >
-      <h2 *ngIf="text_side === 'left'">{{title}}</h2>
-      <p *ngIf="text_side === 'left'">
-        {{ description }}
-      </p>
+<div
+  id="image-text-wrapper"
+  [ngClass]="{
+    'left-side': text_side === 'left',
+    'right-side': text_side === 'right'
+  }"
+>
+  <div class="row">
+    <div class="col-sm-6">
+      <div
+        [ngClass]="{
+          'image-text__text': text_side === 'left',
+          'image-text__image': text_side === 'right'
+        }"
+      >
+        <h2 *ngIf="text_side === 'left'">{{ title }}</h2>
+        <p *ngIf="text_side === 'left'">
+          {{ description }}
+        </p>
+        <img *ngIf="text_side === 'right'" [src]="image" alt="Imagem" />
+      </div>
     </div>
-    <div
-      class='col-md-6'
-      [ngClass]="{'image-text__text': text_side === 'right', 'image-text__image': text_side === 'left'}"
-      [ngStyle]="{'background-image': text_side === 'left' ? 'url(' + image + ')' : 'none'}"
-    >
-      <h2 *ngIf="text_side === 'right'">{{title}}</h2>
-      <p *ngIf="text_side === 'right'">
-        {{ description }}
-      </p>
+    <div class="col-md-6">
+      <div
+        [ngClass]="{
+          'image-text__text': text_side === 'right',
+          'image-text__image': text_side === 'left'
+        }"
+      >
+        <h2 *ngIf="text_side === 'right'">{{ title }}</h2>
+        <p *ngIf="text_side === 'right'">
+          {{ description }}
+        </p>
+        <img *ngIf="text_side === 'left'" [src]="image" alt="Imagem" />
+      </div>
     </div>
   </div>
 </div>
