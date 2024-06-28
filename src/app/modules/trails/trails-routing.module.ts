@@ -13,6 +13,7 @@ import { DetailTrailComponent } from './detail-trail/detail-trail.component';
 
 const routes: Routes = [
   {
+    path: '',
     component: ListTrailsComponent,
   },
   {

@@ -1,15 +1,25 @@
 <div id="tab-bar-wrapper">
   <div class="row">
-    <div class="col-6 tab-bar__logo ">
+    <div class="col-6 tab-bar__logo">
       <div class="logo-wrapper">
-        <img src="/assets/images/logo.png" alt="Logo" title="Logo" class="logo">
+        <img
+          src="/assets/images/logo.png"
+          alt="Logo"
+          title="Logo"
+          class="logo"
+        />
       </div>
     </div>
     <div class="col-6 tab-bar__menu">
       <nav>
         <ul>
           <li>
-            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+            <a
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
           </li>
           <li>
             <a routerLink="/about" routerLinkActive="active">Sobre</a>
@@ -17,9 +27,9 @@
           <li>
             <a routerLink="/trails" routerLinkActive="active">Trilhos</a>
           </li>
-          <li>
+          <!-- <li>
             <a routerLink="/store" routerLinkActive="active">Loja</a>
-          </li>
+          </li> -->
           <!-- <li>
             <a href="#">Experiências</a>
           </li> -->

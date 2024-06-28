@@ -8,43 +8,50 @@ import { NewsComponent } from './modules/news/news.component';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+    loadChildren: () =>
+      import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'store',
-    loadChildren: () => import('./modules/store/store.module').then(m => m.StoreModule)
+    loadChildren: () =>
+      import('./modules/store/store.module').then((m) => m.StoreModule),
   },
   {
     path: 'checkout',
-    loadChildren: () => import('./modules/checkout/checkout.module').then(m => m.CheckoutModule)
+    loadChildren: () =>
+      import('./modules/checkout/checkout.module').then(
+        (m) => m.CheckoutModule
+      ),
   },
   {
     path: 'auth',
-    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: 'about',
     pathMatch: 'full',
-    component: AboutComponent
+    component: AboutComponent,
   },
   {
     path: 'trails',
-    loadChildren: () => import('./modules/trails/trails.module').then(m => m.TrailsModule)
+    loadChildren: () =>
+      import('./modules/trails/trails.module').then((m) => m.TrailsModule),
   },
   {
     path: 'news',
     pathMatch: 'full',
-    component: NewsComponent
+    component: NewsComponent,
   },
   {
     path: 'contact',
     pathMatch: 'full',
-    component: ContactComponent
+    component: ContactComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
