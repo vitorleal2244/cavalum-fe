@@ -1,0 +1,74 @@
+<div class="container page-content">
+    <div id="become-member">
+        <div class="page-header">
+            <div class="page-header__title">
+              <h1>Tornar-se membro</h1>
+            </div>
+            <div class="page-header__subtitle">
+              <p>
+                Se gostaria de fazer parte da familia do Cavalum, por favor inscreva-se no formulário abaixo
+              </p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="become-member__form">
+                        <form [formGroup]="becomeMemberForm">
+                            <div *ngIf="!becomeMemberForm.valid && becomeMemberForm.touched" class="alert alert-danger">
+                                <p>Corriga os erros no formulário!</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Nome</mat-label>
+                                        <input matInput formControlName="firstName" />
+                                        <div *ngIf="becomeMemberForm.value.firstName.touched && becomeMemberForm.value.firstName.errors?.required">
+                                            <mat-error>O nome é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Apelido</mat-label>
+                                        <input matInput formControlName="lastName" />
+                                        <div *ngIf="becomeMemberForm.value.lastName.touched && becomeMemberForm.value.lastName.errors?.required">
+                                            <mat-error>O apelido é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-12">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Email</mat-label>
+                                        <input
+                                            matInput
+                                            formControlName="email"
+                                        />
+                                        <div *ngIf="becomeMemberForm.value.email.touched && becomeMemberForm.value.email.errors?.required">
+                                            <mat-error>O email é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-12">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Contacto</mat-label>
+                                        <input matInput formControlName="contact" />
+                                        <div *ngIf="becomeMemberForm.value.contact.touched && becomeMemberForm.value.contact.errors?.required">
+                                            <mat-error>O contacto é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-12">
+                                    <button mat-flat-button (click)="onSubmit()">Submeter</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    Decidir com o Jorge
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

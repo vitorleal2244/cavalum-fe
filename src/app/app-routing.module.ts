@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
 
-import { AboutComponent } from './modules/about/about.component';
-import { ContactComponent } from './modules/contact/contact.component';
-import { NewsComponent } from './modules/news/news.component';
+import { AboutComponent } from './modules/about/about.component'
+import { ContactComponent } from './modules/contact/contact.component'
+import { NewsComponent } from './modules/news/news.component'
+import { BecomeMemberComponent } from './modules/become-member/become-member.component'
 
 const routes: Routes = [
   {
@@ -48,7 +49,12 @@ const routes: Routes = [
     pathMatch: 'full',
     component: ContactComponent,
   },
-];
+  {
+    path: 'become-member',
+    pathMatch: 'full',
+    component: BecomeMemberComponent,
+  },
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

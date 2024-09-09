@@ -31,17 +31,18 @@ import { LOCALE_ID, isDevMode, importProvidersFrom } from '@angular/core';
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, AppRoutingModule, NgxSpinnerModule, TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslationLoader),
-                deps: [HttpClient]
-            },
-            defaultLanguage: 'pt'
-        }), MdbAccordionModule, MdbCarouselModule, MdbCheckboxModule, MdbCollapseModule, MdbDropdownModule, MdbFormsModule, MdbModalModule, MdbPopoverModule, MdbRadioModule, MdbRangeModule, MdbRippleModule, MdbScrollspyModule, MdbTabsModule, MdbTooltipModule, MdbValidationModule, StoreModule.forRoot({}, {}), StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })),
-        { provide: LOCALE_ID, useValue: 'pt-PT' },
-        provideHttpClient(withInterceptorsFromDi()),
-        provideAnimations()
-    ]
+    importProvidersFrom(BrowserModule, AppRoutingModule, NgxSpinnerModule, TranslateModule.forRoot({
+        loader: {
+            provide: TranslateLoader,
+            useFactory: (createTranslationLoader),
+            deps: [HttpClient]
+        },
+        defaultLanguage: 'pt'
+    }), MdbAccordionModule, MdbCarouselModule, MdbCheckboxModule, MdbCollapseModule, MdbDropdownModule, MdbFormsModule, MdbModalModule, MdbPopoverModule, MdbRadioModule, MdbRangeModule, MdbRippleModule, MdbScrollspyModule, MdbTabsModule, MdbTooltipModule, MdbValidationModule, StoreModule.forRoot({}, {}), StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })),
+    { provide: LOCALE_ID, useValue: 'pt-PT' },
+    provideHttpClient(withInterceptorsFromDi()),
+    provideAnimations(),
+    provideAnimations()
+]
 })
   .catch(err => console.error(err));
