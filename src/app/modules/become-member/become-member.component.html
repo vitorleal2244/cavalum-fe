@@ -18,6 +18,9 @@
                             <div *ngIf="!becomeMemberForm.valid && becomeMemberForm.touched" class="alert alert-danger">
                                 <p>Corriga os erros no formulário!</p>
                             </div>
+                            <div *ngIf="sentForm" class="alert alert-success">
+                                <p>Formulário submetido com successo!</p>
+                            </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <mat-form-field appearance="fill">

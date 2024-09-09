@@ -37,6 +37,7 @@ import { BecomeMemberService } from './become-member.service'
 })
 export class BecomeMemberComponent implements OnInit {
   public becomeMemberForm!: FormGroup
+  public sentForm!: boolean
 
   constructor(
     private fb: FormBuilder,
@@ -44,6 +45,8 @@ export class BecomeMemberComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.sentForm = false
+
     this.becomeMemberForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -55,13 +58,19 @@ export class BecomeMemberComponent implements OnInit {
     })
   }
 
+  /**
+   * On submit going to save form values on db, if valid
+   *
+   * @return {void}
+   * @memberof BecomeMemberComponent
+   */
   public onSubmit(): void {
     try {
       if (this.becomeMemberForm.valid) {
         this.becomeMemberService
           .registerMember(this.becomeMemberForm.value)
           .subscribe((res) => {
-            console.log(res)
+            this.sentForm = true
           })
       }
     } catch (error) {
