@@ -6,7 +6,12 @@
  * Copyright © 2024 Vitor Leal
  */
 
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core'
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms'
 import { FormGroup } from '@angular/forms'
 import { MatFormFieldModule } from '@angular/material/form-field'
@@ -14,6 +19,8 @@ import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
 import { CommonModule } from '@angular/common'
 import { BecomeMemberService } from './become-member.service'
+import { Errors } from 'src/app/core/interfaces/errors.interface'
+import { Observable, of } from 'rxjs'
 
 /**
  * Become a Member Component
@@ -37,15 +44,17 @@ import { BecomeMemberService } from './become-member.service'
 })
 export class BecomeMemberComponent implements OnInit {
   public becomeMemberForm!: FormGroup
-  public sentForm!: boolean
+  public sentForm$!: Observable<boolean>
+  public errors$!: Observable<Errors[]>
 
   constructor(
     private fb: FormBuilder,
+    private cd: ChangeDetectorRef,
     private becomeMemberService: BecomeMemberService
   ) {}
 
   ngOnInit() {
-    this.sentForm = false
+    this.sentForm$ = of(false)
 
     this.becomeMemberForm = this.fb.group({
       firstName: ['', Validators.required],
@@ -69,8 +78,20 @@ export class BecomeMemberComponent implements OnInit {
       if (this.becomeMemberForm.valid) {
         this.becomeMemberService
           .registerMember(this.becomeMemberForm.value)
-          .subscribe((res) => {
-            this.sentForm = true
+          .subscribe((res: any) => {
+            if (res.status === 200) {
+              this.sentForm$ = of(true)
+              this.errors$ = of([])
+              this.cd.detectChanges()
+            } else {
+              this.sentForm$ = of(false)
+              this.errors$ = of([
+                {
+                  message: 'Já fiz uma inscrição com esse email!',
+                },
+              ])
+              this.cd.detectChanges()
+            }
           })
       }
     } catch (error) {

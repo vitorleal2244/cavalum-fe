@@ -18,7 +18,10 @@
                             <div *ngIf="!becomeMemberForm.valid && becomeMemberForm.touched" class="alert alert-danger">
                                 <p>Corriga os erros no formulário!</p>
                             </div>
-                            <div *ngIf="sentForm" class="alert alert-success">
+                            <div *ngFor="let error of errors$|async; index as i" class="alert alert-danger">
+                                <p>{{ error.message }}</p>
+                            </div>
+                            <div *ngIf="sentForm$ | async" class="alert alert-success">
                                 <p>Formulário submetido com successo!</p>
                             </div>
                             <div class="row">
