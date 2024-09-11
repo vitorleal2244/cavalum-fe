@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-md-5 our-actions-image">
           <img
-            src="/assets/images/img1.jpg"
+            src="../../../assets/images/img1.jpg"
             alt="Imagem grupo"
             title="Imagem grupo"
           />
@@ -27,52 +27,16 @@
             </div>
             <div class="our-actions__list">
               <ul>
-                <li class="action-item">
+                <li *ngFor="let action of actions" class="action-item">
                   <div class="action-info">
-                    <h3>Meio dia na neve</h3>
-                    <p>Oferecido diariamente</p>
-                    <p>80€</p>
+                    <h3>{{ action.title }}</h3>
+                    <p>{{ action.subtitle }}</p>
+                    <p>{{ action.price }}€</p>
                   </div>
                   <div class="action-link">
-                    <app-button
-                      [type]="'link'"
-                      [class]="'button secondary'"
-                      [link]="'https://www.google.com'"
-                      [change_page]="'_blank'"
-                      [description]="'Agendar agora'"
-                    />
-                  </div>
-                </li>
-                <li class="action-item">
-                  <div class="action-info">
-                    <h3>Meio dia na neve</h3>
-                    <p>Oferecido diariamente</p>
-                    <p>80€</p>
-                  </div>
-                  <div class="action-link">
-                    <app-button
-                      [type]="'link'"
-                      [class]="'button secondary'"
-                      [link]="'https://www.google.com'"
-                      [change_page]="'_blank'"
-                      [description]="'Agendar agora'"
-                    />
-                  </div>
-                </li>
-                <li class="action-item">
-                  <div class="action-info">
-                    <h3>Meio dia na neve</h3>
-                    <p>Oferecido diariamente</p>
-                    <p>80€</p>
-                  </div>
-                  <div class="action-link">
-                    <app-button
-                      [type]="'link'"
-                      [class]="'button secondary'"
-                      [link]="'https://www.google.com'"
-                      [change_page]="'_blank'"
-                      [description]="'Agendar agora'"
-                    />
+                    <mat-dialog-actions>
+                      <button mat-button class="basic-button" (click)="openDialog()">Agendar</button>
+                    </mat-dialog-actions>
                   </div>
                 </li>
               </ul>
@@ -128,9 +92,23 @@
   </section>
 </div>
 <section id="home-testimonials">
-  <div class="home-testimonials__background">
-    <div class="container">
-      <app-testimonial [testimonials]="testimonials" />
+  <div class="background">
+    <h1>O que dizem sobre nós?</h1>
+    <div class="row">
+      <div *ngFor="let testimonial of testimonials" class="col-sm-4">
+        <mat-card class="testimonial" appearance="outlined">
+          <mat-card-header>
+            <div mat-card-avatar class="avatar">
+              <img src="../../../assets/images/avatars/avatar1.jpg" [alt]="testimonial.author" [title]="testimonial.author" />
+            </div>
+            <mat-card-title>{{ testimonial.author }}</mat-card-title>
+            <mat-card-subtitle>{{ testimonial.position }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ testimonial.text }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
   </div>
 </section>

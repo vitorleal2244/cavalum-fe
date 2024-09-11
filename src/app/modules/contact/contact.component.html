@@ -14,25 +14,46 @@
       <div class="row">
         <div class="col-md-7">
           <div class="contact__form">
-            <form method="POST">
-              <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nome">
+            <form [formGroup]="contactForm" method="POST">
+              <div *ngIf="!contactForm.valid && contactForm.touched" class="alert alert-danger">
+                <p>Corriga os erros no formulário!</p>
               </div>
-              <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
+              <div *ngFor="let error of errors$|async; index as i" class="alert alert-danger">
+                  <p>{{ error.message }}</p>
               </div>
-              <div class="form-group">
-                <label for="subject">Assunto</label>
-                <input type="email" class="form-control" id="subject" name="subject" placeholder="Assunto">
+              <div *ngIf="sentForm$ | async" class="alert alert-success">
+                  <p>Formulário submetido com successo!</p>
               </div>
-              <div class="form-group">
-                <label for="message">Mensagem</label>
-                <textarea class="form-control" id="message" name="message" rows="3" placeholder="Mensagem" rows="5" col="5"></textarea>
-              </div>
-              <div class="form-group">
-                <app-button [class]="'secondary-white'" [description]="'Enviar'" />
+              <mat-form-field appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput id="name" name="name" formControlName="name" />
+                <div *ngIf="contactForm.value.name.touched && contactForm.value.name.errors?.required">
+                    <mat-error>O nome é um campo <strong>obrigatório</strong>!</mat-error>
+                </div>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>E-mail</mat-label>
+                <input matInput id="email" name="email" formControlName="email" />
+                <div *ngIf="contactForm.value.email.touched && contactForm.value.email.errors?.required">
+                    <mat-error>O email é um campo <strong>obrigatório</strong>!</mat-error>
+                </div>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Assunto</mat-label>
+                <input matInput id="subject" name="subject" formControlName="subject" />
+                <div *ngIf="contactForm.value.subject.touched && contactForm.value.subject.errors?.required">
+                    <mat-error>O assunto é um campo <strong>obrigatório</strong>!</mat-error>
+                </div>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Mensagem</mat-label>
+                <textarea matInput id="message" name="message" rows="3" rows="5" col="5" formControlName="message"></textarea>
+                <div *ngIf="contactForm.value.message.touched && contactForm.value.message.errors?.required">
+                    <mat-error>A messagem é um campo <strong>obrigatório</strong>!</mat-error>
+                </div>
+              </mat-form-field>
+              <div>
+                <button mat-flat-button (click)="onSubmit()">Submeter</button>
               </div>
             </form>
           </div>
@@ -48,8 +69,8 @@
             <div class="contact__info-item">
               <span class="material-symbols-outlined">
                 mail
-              </span
-              >cavalumtrails@gmail.com
+              </span>
+              cavalumtrails&#64;gmail.com
             </div>
             <div class="contact__info-item">
               <span class="material-symbols-outlined">

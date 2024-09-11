@@ -1,4 +1,4 @@
-@import '../../../../assets/css/variables';
+@import '../../styles/abstracts/_variables';
 
 #slider-buttons {
   display: flex;
@@ -96,16 +96,30 @@
   background-color: $white;
   padding: $sector_separator_padding 0 0;
 
-  .home-testimonials {
+  h1 {
+    text-align: center;
+    padding-bottom: 40px;
+    color: $white;
+  }
 
-    &__background {
-      background-image: url('../../../../assets/images/home_background.JPG');
+  .background {
+    background-image: url('../../../assets/images/home_background.JPG');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 70px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    
+    img {
+      width: 100%;
       height: 100%;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      padding: 70px 0;
+      border-radius: 50px;
     }
   }
 }

@@ -5,12 +5,12 @@ import { AboutComponent } from './modules/about/about.component'
 import { ContactComponent } from './modules/contact/contact.component'
 import { NewsComponent } from './modules/news/news.component'
 import { BecomeMemberComponent } from './modules/become-member/become-member.component'
+import { HomeComponent } from './modules/home/home.component'
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./modules/home/home.module').then((m) => m.HomeModule),
+    component: HomeComponent,
   },
   {
     path: 'store',

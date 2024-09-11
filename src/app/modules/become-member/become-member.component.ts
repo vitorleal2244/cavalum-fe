@@ -87,7 +87,7 @@ export class BecomeMemberComponent implements OnInit {
               this.sentForm$ = of(false)
               this.errors$ = of([
                 {
-                  message: 'Já fiz uma inscrição com esse email!',
+                  message: 'Já fez uma inscrição com esse email!',
                 },
               ])
               this.cd.detectChanges()
