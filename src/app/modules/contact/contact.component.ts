@@ -1,3 +1,11 @@
+/*
+ * File: contact.component.ts
+ * Project: Cavalum
+ * Created: Saturday, 7th September 2024 7:58:21 pm
+ * Last Modified: Wednesday, 11th September 2024 12:13:42 pm
+ * Copyright © 2024 Vitor Leal
+ */
+
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core'
 import { ButtonComponent } from '../../core/components/button/button.component'
 import { MatInputModule } from '@angular/material/input'
@@ -13,6 +21,13 @@ import { Observable, of } from 'rxjs'
 import { Errors } from 'src/app/core/interfaces/errors.interface'
 import { CommonModule } from '@angular/common'
 
+/**
+ * Contact Component
+ *
+ * @exports
+ * @class
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -31,12 +46,26 @@ export class ContactComponent implements OnInit {
   public sentForm$!: Observable<boolean>
   public errors$!: Observable<Errors[]>
 
+  /**
+   * Creates an instance of ContactComponent
+   *
+   * @param {FormBuilder} fb
+   * @param {ChangeDetectorRef} cd
+   * @param {ContactService} contactService
+   *
+   * @memberof ContactComponent
+   */
   constructor(
     private fb: FormBuilder,
     private cd: ChangeDetectorRef,
     private readonly contactService: ContactService
   ) {}
 
+  /**
+   * Initializes some variables and calls methods
+   *
+   * @memberof ContactComponent
+   */
   ngOnInit() {
     this.sentForm$ = of(false)
 
@@ -52,6 +81,7 @@ export class ContactComponent implements OnInit {
    * On submit going to save form values on db, if valid
    *
    * @return {void}
+   *
    * @memberof ContactComponent
    */
   public onSubmit(): void {

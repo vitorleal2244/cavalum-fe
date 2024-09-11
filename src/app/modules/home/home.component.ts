@@ -20,8 +20,14 @@ import { MatCardModule } from '@angular/material/card'
 import { CommonModule } from '@angular/common'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatDialog } from '@angular/material/dialog'
-import { ScheduleActionDialog } from './dialogs/schedule-action.component'
+import { ScheduleActionComponent } from './dialogs/schedule-action.component'
 
+/**
+ * Home Component
+ *
+ * @exports
+ * @class
+ */
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -91,10 +97,24 @@ export class HomeComponent {
     },
   ]
 
-  constructor(private matDialog: MatDialog) {}
+  /**
+   * Creates an instance of HomeComponent
+   *
+   * @param {MatDialog} matDialog
+   *
+   * @memberof HomeComponent
+   */
+  constructor(private readonly matDialog: MatDialog) {}
 
-  openDialog() {
-    this.matDialog.open(ScheduleActionDialog, {
+  /**
+   * When this function is triggered, a modal will appear with ScheduleActionComponent content
+   *
+   * @return {void}
+   *
+   * @memberof HomeComponent
+   */
+  openDialog(): void {
+    this.matDialog.open(ScheduleActionComponent, {
       width: '50%',
     })
   }

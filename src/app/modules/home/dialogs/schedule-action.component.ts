@@ -15,7 +15,11 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { Observable, of } from 'rxjs'
 import { Errors } from 'src/app/core/interfaces/errors.interface'
 import { CommonModule } from '@angular/common'
+import { ScheduleActionService } from './schedule-action.service'
 
+/**
+ * Schedule Action Dialog Component
+ */
 @Component({
   selector: 'app-schedule-action',
   templateUrl: 'schedule-action.component.html',
@@ -33,12 +37,16 @@ import { CommonModule } from '@angular/common'
     CommonModule,
   ],
 })
-export class ScheduleActionDialog implements OnInit {
+export class ScheduleActionComponent implements OnInit {
   public scheduleForm!: FormGroup
   public sentForm$!: Observable<boolean>
   public errors$!: Observable<Errors[]>
 
-  constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) {}
+  constructor(
+    private fb: FormBuilder,
+    private cd: ChangeDetectorRef,
+    private scheduleActionService: ScheduleActionService
+  ) {}
 
   ngOnInit() {
     this.sentForm$ = of(false)
@@ -52,5 +60,29 @@ export class ScheduleActionDialog implements OnInit {
     })
   }
 
-  public onSubmit(): void {}
+  public onSubmit(): void {
+    try {
+      if (this.scheduleForm.valid) {
+        this.scheduleActionService
+          .registerScheduleAction(this.scheduleForm.value)
+          .subscribe((res: any) => {
+            if (res.status === 200) {
+              this.sentForm$ = of(true)
+              this.errors$ = of([])
+              this.cd.detectChanges()
+            } else {
+              this.sentForm$ = of(false)
+              this.errors$ = of([
+                {
+                  message: 'Já fez um pedido de agendamento com esse email!',
+                },
+              ])
+              this.cd.detectChanges()
+            }
+          })
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }
