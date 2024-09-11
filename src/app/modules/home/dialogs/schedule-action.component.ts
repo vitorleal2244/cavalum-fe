@@ -23,6 +23,7 @@ import { ScheduleActionService } from './schedule-action.service'
 @Component({
   selector: 'app-schedule-action',
   templateUrl: 'schedule-action.component.html',
+  styleUrls: ['./schedule-action.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [

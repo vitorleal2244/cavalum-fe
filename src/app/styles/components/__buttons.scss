@@ -1,3 +1,55 @@
 .basic-button.mat-mdc-button:not(:disabled) {
     color: $green;
 }
+
+.button {
+    padding: 10px 30px !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    -moz-box-sizing: border-box !important;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    border-radius: 0px !important;
+}
+
+.primary,
+.primary-black {
+    background-color: $white !important;
+    color: $black !important;
+    border: 1px solid $black !important;
+    transition: all 0.5s ease !important;
+}
+
+.secondary {
+    background-color: $green !important;
+    color: $black !important;
+    border: 1px solid $green !important;
+    transition: all 0.5s ease !important;
+}
+
+.secondary-white {
+    background-color: $green !important;
+    color: $white !important;
+    border: 1px solid $white !important;
+    transition: all 0.5s ease !important;
+}
+
+.primary:hover {
+    background-color: transparent !important;
+    border: 1px solid $white !important;
+    color: $white !important;
+    transition: all 0.5s ease !important;
+}
+
+.primary-black:hover {
+    background-color: $black !important;
+    border: 1px solid $black !important;
+    color: $white !important;
+    transition: all 0.5s ease !important;
+}
+
+.secondary:hover,
+.secondary-white:hover {
+    background-color: $dark_green !important;
+    transition: all 0.5s ease !important;
+}

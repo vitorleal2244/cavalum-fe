@@ -21,6 +21,7 @@ import { CommonModule } from '@angular/common'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatDialog } from '@angular/material/dialog'
 import { ScheduleActionComponent } from './dialogs/schedule-action.component'
+import { RouterLink } from '@angular/router'
 
 /**
  * Home Component
@@ -46,6 +47,7 @@ import { ScheduleActionComponent } from './dialogs/schedule-action.component'
     MatCardModule,
     MatDialogModule,
     CommonModule,
+    RouterLink,
   ],
 })
 export class HomeComponent {
@@ -73,25 +75,25 @@ export class HomeComponent {
   public actions = [
     {
       id: 1,
-      title: 'Meio dia na neve',
+      title: 'Festa de aniversário',
       subtitle: 'Oferecido diariamente',
       price: '80',
     },
     {
       id: 2,
-      title: 'Meio dia na neve',
+      title: 'Eventos de familia',
       subtitle: 'Oferecido diariamente',
       price: '80',
     },
     {
       id: 3,
-      title: 'Meio dia na neve',
+      title: 'Eventos de empresa',
       subtitle: 'Oferecido diariamente',
       price: '80',
     },
     {
       id: 4,
-      title: 'Meio dia na neve',
+      title: 'Eventos de trailing',
       subtitle: 'Oferecido diariamente',
       price: '80',
     },

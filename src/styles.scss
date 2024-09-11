@@ -36,6 +36,7 @@ $cavalum-theme: mat.define-light-theme((
 @import './app/styles/abstracts/_variables';
 @import './app/styles/components/_page';
 @import './app/styles/components/_buttons';
+@import './app/styles/components/_elements';
 
 /* You can add global styles to this file, and also import other style files */
 * {
@@ -48,70 +49,9 @@ $cavalum-theme: mat.define-light-theme((
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-ul, p, ol {
-  margin: 0;
-  padding: 0;
-}
-
-p {
-  font-size: 13px;
-}
-
-a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-
-h1 {
-  font-size: 55px;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 40px;
-}
-
-h3 {
-  font-size: 27px;
-  font-weight: 100;
-}
-
-h4 {
-  font-size: 24px;
-}
-
-h5 {
-  font-size: 20px;
-}
 
 span.material-symbols-outlined {
   vertical-align: middle;
-}
-
-
-/* ================ */
-
-.page-content {
-  padding-top: $sector_separator_padding_max;
-}
-
-.page-header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: $sector_separator_padding;
-
-  &__title {
-    padding-bottom: $gap;
-  }
-
-  &__subtitle {
-    width: 40%;
-    text-align: center;
-  }
 }
 
 /* ================ */
@@ -146,5 +86,3 @@ label {
 .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
   border-bottom-color: $green !important;
 }
-/* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';

@@ -1,12 +1,8 @@
 <app-slider>
   <div id="slider-buttons">
-    <app-button
-      [type]="'link'"
-      [class]="'button primary'"
-      [link]="'https://www.google.pt'"
-      [change_page]="'_blank'"
-      [description]="'Saiba mais'"
-    />
+    <a mat-stroked-button class="button primary" routerLink="/about">
+      Saber mais
+    </a>
   </div>
 </app-slider>
 <div class="container">
@@ -31,11 +27,11 @@
                   <div class="action-info">
                     <h3>{{ action.title }}</h3>
                     <p>{{ action.subtitle }}</p>
-                    <p>{{ action.price }}€</p>
+                    <small>Desde {{ action.price }}€</small>
                   </div>
                   <div class="action-link">
                     <mat-dialog-actions>
-                      <button mat-button class="basic-button" (click)="openDialog()">Agendar</button>
+                      <button mat-button class="button primary" (click)="openDialog()">Agendar</button>
                     </mat-dialog-actions>
                   </div>
                 </li>
