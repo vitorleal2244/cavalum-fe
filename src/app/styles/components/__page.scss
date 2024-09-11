@@ -3,22 +3,26 @@
 }
 
 .page-content {
-    padding-top: $sector_separator_padding_max;
+  padding-top: $sector_separator_padding_max;
+}
+
+.page-trail-detail-content {
+  padding-top: calc($sector_separator_padding_max* 2);
+}
+  
+.page-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: $sector_separator_padding;
+
+  &__title {
+    padding-bottom: $gap;
   }
-  
-  .page-header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: $sector_separator_padding;
-  
-    &__title {
-      padding-bottom: $gap;
-    }
-  
-    &__subtitle {
-      width: 40%;
-      text-align: center;
-    }
+
+  &__subtitle {
+    width: 40%;
+    text-align: center;
   }
+}

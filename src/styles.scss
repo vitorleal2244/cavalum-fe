@@ -57,6 +57,11 @@ span.material-symbols-outlined {
 
 /* ================ */
 
+.icon {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
 .form-group {
   padding-bottom: $form_spacing;
 }
@@ -86,4 +91,8 @@ label {
 
 .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
   border-bottom-color: $green !important;
+}
+
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
+  color: $white !important;
 }

@@ -1,3 +1,87 @@
-<div class="container page-content">
-  <div id="trails-detail">olÁ MUNDO</div>
+<div class="page-trail-detail-content" style="background-image: url('{{ trailInfo.image }}');">
+  <div class="container">
+    <div class="trail-detail">
+      <div class="trail-detail__title">
+        <h1>{{ trailInfo.title }}</h1>
+      </div>
+      <div class="trail-detail__details">
+        <div class="trail-detail__info">
+          <ul>
+            <li>
+              <mat-icon aria-hidden="false" aria-label="Example home icon" class="icon" fontIcon="location_on"></mat-icon>
+              Parque de Penafiel
+            </li>
+            <li>
+              <mat-icon aria-hidden="false" aria-label="straighten icon" class="icon" fontIcon="straighten"></mat-icon>
+              13km
+            </li>
+            <li>
+              <mat-icon aria-hidden="false" aria-label="square_foot icon" class="icon" fontIcon="square_foot"></mat-icon>
+              25 m
+            </li>
+            <li>
+              <mat-icon aria-hidden="false" aria-label="laps icon" class="icon" fontIcon="repeat"></mat-icon>
+              Loop
+            </li>
+          </ul>
+        </div>
+
+        <div class="trail-detail__description">
+          Head out on this 1.3-km loop trail near Marecos, Porto District. Generally considered an easy route, it takes an average of 19 min to complete. 
+          This trail is great for mountain biking, running, and walking, and it's unlikely you'll encounter many other people while exploring. 
+          The trail is open year-round and is beautiful to visit anytime. Dogs are welcome and may be off-leash in some areas.
+        </div>
+
+        <div class="trail-detail__tags">
+          <mat-chip-set aria-label="Fish selection">
+            <mat-chip class="tag">Moutain Biking</mat-chip>
+            <mat-chip class="tag">Running</mat-chip>
+            <mat-chip class="tag">Walking</mat-chip>
+            <mat-chip class="tag">Dog-Friendly</mat-chip>
+            <mat-chip class="tag">Kid-Friendly</mat-chip>
+            <mat-chip class="tag">Forest</mat-chip>
+            <mat-chip class="tag">River</mat-chip>
+          </mat-chip-set>
+        </div>
+
+        <h3>Avaliações</h3>
+        <div class="trail-detail__reviews">
+          <div class="trail-detail__stars">
+            <ul>
+              <li>
+                <small>5 estrelas</small>
+                <mat-progress-bar mode="determinate" value="40" class="progress-bar"></mat-progress-bar>
+              </li>
+              <li>
+                <small>4 estrelas</small>
+                <mat-progress-bar mode="determinate" value="10" class="progress-bar"></mat-progress-bar>
+              </li>
+              <li>
+                <small>3 estrelas</small>
+                <mat-progress-bar mode="determinate" value="0" class="progress-bar"></mat-progress-bar>
+              </li>
+              <li>
+                <small>2 estrelas</small>
+                <mat-progress-bar mode="determinate" value="2" class="progress-bar"></mat-progress-bar>
+              </li>
+              <li>
+                <small>1 estrela</small>
+                <mat-progress-bar mode="determinate" value="0" class="progress-bar"></mat-progress-bar>
+              </li>
+            </ul>
+          </div>
+          <div class="trail-detail__average">
+            <h1>4.8</h1>
+            <small>7 comentários</small>
+          </div>
+        </div>
+        <div class="trail-detail__comment-search">
+          <input type="text" />
+        </div>
+        <div class="trail-detail__comments">
+          Comentários aqui
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

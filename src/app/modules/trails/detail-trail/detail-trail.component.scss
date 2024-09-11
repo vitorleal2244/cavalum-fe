@@ -1,0 +1,100 @@
+@import '../../../styles/abstracts/_variables';
+
+.page-trail-detail-content {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: $green;
+}
+
+.trail-detail {
+
+    h3 {
+        color: $white;
+    }
+
+    &__title {
+        color: $white;
+    }
+
+    &__info {
+        margin-bottom: 20px;
+        background-color: $green;
+        border-radius: 50px;
+        padding: 2px 30px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        border-bottom: 0;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            justify-content: space-between;
+
+            li {
+               padding: 10px; 
+               color: $white;
+            }
+        }
+    }
+
+    &__description {
+        background-color: $white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 2px;
+        font-size: 13px;
+    }
+
+    &__tags {
+        margin-bottom: 50px;
+    }
+
+    &__reviews {
+        background-color: $white;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+        padding: 20px;
+    }
+
+    &__stars {
+        width: 15%;
+
+        ul {
+            list-style-type: none;
+
+            li {
+                display: flex;
+                flex-direction: row;
+                gap: 1px;
+
+                small {
+                    width: 100%;
+                }
+
+                .progress-bar {
+                    padding-top: 15px;
+                }
+            }
+        }
+    }
+
+    &__average {
+        h1 {
+            line-height: 50px;
+        }
+    }
+
+    &__comment-search {
+        background-color: $white;
+        padding: 20px; 
+    }
+
+    &__comments {
+        background-color: $white;
+        padding: 50px 20px 0;
+    }
+}
