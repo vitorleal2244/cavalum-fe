@@ -1,0 +1,16 @@
+.card {
+    border-radius: 2px !important;
+
+    &__header {
+        padding: 10px !important;
+    }
+
+    &__title {
+        font-weight: 700 !important;
+    }
+
+    &__content {
+        padding: 10px !important;
+        font-size: 12px !important;
+    }
+}

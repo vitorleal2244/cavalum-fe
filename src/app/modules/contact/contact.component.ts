@@ -7,7 +7,6 @@
  */
 
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core'
-import { ButtonComponent } from '../../core/components/button/button.component'
 import { MatInputModule } from '@angular/material/input'
 import { MatButtonModule } from '@angular/material/button'
 import { ContactService } from './contact.service'
@@ -33,13 +32,7 @@ import { CommonModule } from '@angular/common'
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
   standalone: true,
-  imports: [
-    ButtonComponent,
-    MatInputModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    CommonModule,
-  ],
+  imports: [MatInputModule, MatButtonModule, ReactiveFormsModule, CommonModule],
 })
 export class ContactComponent implements OnInit {
   public contactForm!: FormGroup

@@ -13,7 +13,6 @@ import { SvgMapComponent } from '../../../assets/images/svg/map/svg_map.componen
 import { SvgManChildComponent } from '../../../assets/images/svg/man_child/svg_man_child.component'
 import { SvgMedicalCaseComponent } from '../../../assets/images/svg/medical_case/svg_medical_case.component'
 import { ManWalkingComponent } from '../../../assets/images/svg/man_walking/man_walking.component'
-import { ButtonComponent } from '../../core/components/button/button.component'
 import { SliderComponent } from '../../core/components/slider/slider.component'
 import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
@@ -36,7 +35,6 @@ import { RouterLink } from '@angular/router'
   standalone: true,
   imports: [
     SliderComponent,
-    ButtonComponent,
     ManWalkingComponent,
     SvgMedicalCaseComponent,
     SvgManChildComponent,
