@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { MatIcon, MatIconModule } from '@angular/material/icon'
 import { RouterLink, RouterLinkActive } from '@angular/router'
 
 @Component({
@@ -6,6 +7,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router'
   templateUrl: './tab-bar.component.html',
   styleUrls: ['./tab-bar.component.scss'],
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, MatIconModule],
 })
 export class TabBarComponent {}

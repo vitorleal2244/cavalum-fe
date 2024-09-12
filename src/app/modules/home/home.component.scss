@@ -15,10 +15,11 @@
     margin-bottom: 10px;
 
     .our-actions-image {
+      overflow: hidden;
 
       img {
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 100%;
       }
     }
 

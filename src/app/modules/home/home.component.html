@@ -9,14 +9,14 @@
   <section id="home-our-actions">
     <div class="our-actions-wrapper">
       <div class="row">
-        <div class="col-md-5 our-actions-image">
+        <div class="col-sm-5 our-actions-image">
           <img
             src="../../../assets/images/img1.jpg"
             alt="Imagem grupo"
             title="Imagem grupo"
           />
         </div>
-        <div class="col-md-7">
+        <div class="col-sm-7">
           <div class="our-actions">
             <div class="our-actions__title">
               <h2>Nossas ações</h2>
@@ -30,9 +30,7 @@
                     <small>Desde {{ action.price }}€</small>
                   </div>
                   <div class="action-link">
-                    <mat-dialog-actions>
-                      <button mat-button class="button primary" (click)="openDialog()">Agendar</button>
-                    </mat-dialog-actions>
+                    <button mat-button class="button primary" (click)="openDialog()">Agendar</button>
                   </div>
                 </li>
               </ul>
@@ -77,9 +75,7 @@
           </li>
         </ul>
       </div>
-      <mat-dialog-actions>
-        <button mat-button class="button primary-black">Saiba como</button>
-      </mat-dialog-actions>
+      <button mat-button class="button primary-black">Saiba como</button>
     </div>
   </section>
 </div>

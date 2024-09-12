@@ -96,3 +96,58 @@ label {
 .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
   color: $white !important;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .desktop {
+    display: none !important;
+  }
+
+  .mobile {
+    display: inline !important;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .desktop {
+    display: none !important;
+  }
+
+  .mobile {
+    display: inline !important;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .desktop {
+    display: inline !important;
+  }
+
+  .mobile {
+    display: none !important;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .desktop {
+    display: inline;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .desktop {
+    display: inline;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
