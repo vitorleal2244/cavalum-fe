@@ -33,7 +33,7 @@
             justify-content: space-between;
 
             li {
-               padding: 10px; 
+               padding: 10px;
                color: $white;
             }
         }
@@ -48,7 +48,7 @@
     }
 
     &__tags {
-        margin-bottom: 50px;
+        padding-bottom: 50px;
     }
 
     &__reviews {
@@ -90,11 +90,11 @@
 
     &__comment-search {
         background-color: $white;
-        padding: 20px; 
+        padding: 0 20px;
     }
 
     &__comments {
         background-color: $white;
-        padding: 50px 20px 0;
+        padding: 0 20px 20px;
     }
 }
