@@ -9,4 +9,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router'
   standalone: true,
   imports: [RouterLink, RouterLinkActive, MatIconModule],
 })
-export class TabBarComponent {}
+export class TabBarComponent {
+  public onActivate(event: Event) {
+    window.scroll(0, 0);
+  }
+}

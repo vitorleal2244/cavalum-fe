@@ -18,37 +18,42 @@
               routerLink="/"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
+              (activate)="onActivate($event)"
             >Home
             </a>
           </li>
           <li>
-            <a 
-              routerLink="/about" 
+            <a
+              routerLink="/about"
               routerLinkActive="active"
+              (activate)="onActivate($event)"
             >
               Sobre
             </a>
           </li>
           <li>
-            <a 
-              routerLink="/trails" 
+            <a
+              routerLink="/trails"
               routerLinkActive="active"
+              (activate)="onActivate($event)"
             >
               Trilhos
             </a>
           </li>
           <li>
-            <a 
-              routerLink="/contact" 
+            <a
+              routerLink="/contact"
               routerLinkActive="active"
+              (activate)="onActivate($event)"
             >
               Contato
             </a>
           </li>
           <li>
-            <a 
-              routerLink="/become-member" 
+            <a
+              routerLink="/become-member"
               routerLinkActive="active"
+              (activate)="onActivate($event)"
             >
               Tornar-se membro
             </a>
@@ -67,38 +72,43 @@
           routerLink="/"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
+          (activate)="onActivate($event)"
         >
           <mat-icon aria-hidden="false" aria-label="Home icon" fontIcon="home"></mat-icon>
         </a>
       </li>
       <li>
         <a
-          routerLink="/about" 
+          routerLink="/about"
           routerLinkActive="active"
+          (activate)="onActivate($event)"
         >
           <mat-icon aria-hidden="false" aria-label="Handshake icon" fontIcon="handshake"></mat-icon>
         </a>
       </li>
       <li>
         <a
-          routerLink="/trails" 
+          routerLink="/trails"
           routerLinkActive="active"
+          (activate)="onActivate($event)"
         >
           <mat-icon aria-hidden="false" aria-label="Trails icon" fontIcon="hiking"></mat-icon>
         </a>
       </li>
       <li>
         <a
-          routerLink="/contact" 
+          routerLink="/contact"
           routerLinkActive="active"
+          (activate)="onActivate($event)"
         >
           <mat-icon aria-hidden="false" aria-label="Contact icon" fontIcon="call"></mat-icon>
         </a>
       </li>
       <li>
-        <a 
-          routerLink="/become-member" 
+        <a
+          routerLink="/become-member"
           routerLinkActive="active"
+          (activate)="onActivate($event)"
         >
           <mat-icon aria-hidden="false" aria-label="Member icon" fontIcon="person"></mat-icon>
         </a>
