@@ -77,7 +77,7 @@
   }
 
   &.mobile {
-    padding: 20px;
+    padding: 10px 20px;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -95,12 +95,3 @@
     }
   }
 }
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
-

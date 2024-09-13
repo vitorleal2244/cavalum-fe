@@ -5,11 +5,22 @@
     </a>
   </div>
 </app-slider>
+<div class="slider-mobile mobile">
+  <div class="slider-mobile__overlay"></div>
+  <div class="slider-mobile__intro">
+    <div class="slider-mobile__image">
+      <img src="../../../assets/images/logo.png" alt="Cavalum" title="Cavalum" />
+    </div>
+    <div class="slider-mobile__buttons">
+      <button mat-button class="button primary get-started" (click)="scrollTo(ouractions)">Avançar</button>
+    </div>
+  </div>
+</div>
 <div class="container">
-  <section id="home-our-actions">
+  <section #ouractions id="home-our-actions">
     <div class="our-actions-wrapper">
       <div class="row">
-        <div class="col-sm-5 our-actions-image">
+        <div class="col-sm-5 our-actions-image desktop">
           <img
             src="../../../assets/images/img1.jpg"
             alt="Imagem grupo"
@@ -19,7 +30,7 @@
         <div class="col-sm-7">
           <div class="our-actions">
             <div class="our-actions__title">
-              <h2>Nossas ações</h2>
+              <h1>Nossas ações</h1>
             </div>
             <div class="our-actions__list">
               <ul>

@@ -53,3 +53,25 @@
     background-color: $dark_green !important;
     transition: all 0.5s ease !important;
 }
+
+.get-started {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  color: $white !important;
+  border: 0 !important;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .button {
+    padding: 15px 50px !important;
+    border-radius: 50px !important;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .button {
+    padding: 15px 50px !important;
+    border-radius: 50px !important;
+  }
+}

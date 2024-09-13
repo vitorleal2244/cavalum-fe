@@ -99,30 +99,58 @@ label {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  * {
+    font-family: "Nunito Sans", sans-serif;
+  }
+
+  #content {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
   .desktop {
     display: none !important;
   }
 
   .mobile {
-    display: inline !important;
+    display: block !important;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  * {
+    font-family: "Nunito Sans", sans-serif;
+  }
+
+  #content {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .container {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
   .desktop {
     display: none !important;
   }
 
   .mobile {
-    display: inline !important;
+    display: block !important;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .desktop {
-    display: inline !important;
+    display: block !important;
   }
 
   .mobile {
@@ -133,7 +161,7 @@ label {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .desktop {
-    display: inline;
+    display: block;
   }
 
   .mobile {
@@ -144,7 +172,7 @@ label {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .desktop {
-    display: inline;
+    display: block;
   }
 
   .mobile {

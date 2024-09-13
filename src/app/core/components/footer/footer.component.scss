@@ -85,3 +85,22 @@
     }
   }
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #footer-wrapper {
+    padding: 10px !important;
+    margin-bottom: 50px;
+
+    .footer {
+
+      &__links {
+
+        ul {
+          flex-direction: column !important;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}

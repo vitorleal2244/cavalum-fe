@@ -104,7 +104,7 @@ export class HomeComponent {
    *
    * @memberof HomeComponent
    */
-  constructor(private readonly matDialog: MatDialog) {}
+  constructor(private readonly matDialog: MatDialog) { }
 
   /**
    * When this function is triggered, a modal will appear with ScheduleActionComponent content
@@ -113,9 +113,13 @@ export class HomeComponent {
    *
    * @memberof HomeComponent
    */
-  openDialog(): void {
+  public openDialog(): void {
     this.matDialog.open(ScheduleActionComponent, {
       width: '50%',
     })
+  }
+
+  public scrollTo(el: HTMLElement) {
+    el.scrollIntoView();
   }
 }
