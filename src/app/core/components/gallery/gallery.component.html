@@ -4,7 +4,7 @@
   </div>
   <div class="gallery__photos">
     <div class="row">
-      <div class="column">
+      <div class="col-sm-12 column">
         <img
           *ngFor="let photo of photos_section_1"
           src="{{ photo }}"
@@ -12,7 +12,7 @@
           (click)="onPhotoClickHandler(photo)"
         />
       </div>
-      <div class="column">
+      <div class="col-sm-12 column">
         <img
           *ngFor="let photo of photos_section_2"
           src="{{ photo }}"
@@ -20,7 +20,7 @@
           (click)="onPhotoClickHandler(photo)"
         />
       </div>
-      <div class="column">
+      <div class="col-sm-12 column">
         <img
           *ngFor="let photo of photos_section_3"
           src="{{ photo }}"
@@ -28,7 +28,7 @@
           (click)="onPhotoClickHandler(photo)"
         />
       </div>
-      <div class="column">
+      <div class="col-sm-12 column">
         <img
           *ngFor="let photo of photos_section_4"
           src="{{ photo }}"

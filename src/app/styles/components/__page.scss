@@ -29,6 +29,10 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .content {
+    padding-bottom: 20px;
+  }
+
   .page-content { 
     padding-top: 50px;
   }
@@ -36,14 +40,27 @@
   .page-header {
     padding-bottom: 30px;
 
+    &__title {
+      padding: 50px 0 20px;
+      text-align: center;
+    }
+
     &__subtitle {
       width: 90%;
     }
+  }
+
+  .page-trail-detail-content {
+    padding-top: 50px;
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .content {
+    padding-bottom: 20px;
+  }
+
   .page-content { 
     padding-top: 50px;
   }
@@ -51,8 +68,17 @@
   .page-header {
     padding-bottom: 30px;
 
+    &__title {
+      padding: 50px 0 20px;
+      text-align: center;
+    }
+
     &__subtitle {
       width: 90%;
     }
+  }
+
+  .page-trail-detail-content {
+    padding-top: 50px;
   }
 }

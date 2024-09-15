@@ -3,3 +3,32 @@
 #trails {
   padding-bottom: $sector_separator_padding;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .trails {
+
+    &__content {
+      padding: 10px;
+
+      .card {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .trails {
+
+    &__content {
+      padding: 10px;
+
+      .card {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  
+}

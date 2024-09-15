@@ -37,3 +37,45 @@
     }
   }
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #contact {
+
+    .contact {
+
+      &__content {
+        padding-bottom: 20px;
+      }
+
+      &__form {
+        padding: 10px 10px 30px;
+      }
+
+      &__info {
+        padding: 50px 10px;
+      }
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  #contact {
+
+    .contact {
+
+      &__content {
+        padding-bottom: 20px;
+      }
+
+      &__form {
+        padding: 10px 10px 30px;
+      }
+
+      &__info {
+        padding: 50px 10px;
+      }
+    }
+  }
+}
