@@ -93,6 +93,12 @@ export class BecomeMemberComponent implements OnInit {
               this.cd.detectChanges()
             }
           })
+      } else {
+        this.errors$ = of([
+          {
+            message: 'Preencha os campos obrigatórios!',
+          },
+        ])
       }
     } catch (error) {
       console.error(error)
