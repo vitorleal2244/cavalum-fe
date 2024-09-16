@@ -1,16 +1,28 @@
 .card {
-    border-radius: 2px !important;
-
-    &__header {
-        padding: 10px !important;
-    }
+    margin-bottom: 10px;
 
     &__title {
-        font-weight: 700 !important;
+        font-size: 14px !important;
     }
 
-    &__content {
-        padding: 10px !important;
+    &__subtitle {
         font-size: 12px !important;
+    }
+
+    &__description {
+        padding-top: 10px !important;
+
+        p {
+            font-size: 13px !important;
+        }
+    }
+
+    &__image {
+        width: auto;
+        height: 200px;
+    }
+
+    &__actions {
+        padding: 15px !important;
     }
 }

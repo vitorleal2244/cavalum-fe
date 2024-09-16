@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router'
 
 import { AboutComponent } from './modules/about/about.component'
 import { ContactComponent } from './modules/contact/contact.component'
-import { NewsComponent } from './modules/news/news.component'
 import { BecomeMemberComponent } from './modules/become-member/become-member.component'
 import { HomeComponent } from './modules/home/home.component'
 
@@ -41,8 +40,8 @@ const routes: Routes = [
   },
   {
     path: 'news',
-    pathMatch: 'full',
-    component: NewsComponent,
+    loadChildren: () =>
+      import('./modules/news/news.module').then((m) => m.NewsModule),
   },
   {
     path: 'contact',
@@ -57,9 +56,11 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    scrollPositionRestoration: 'enabled'
-  })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+    }),
+  ],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

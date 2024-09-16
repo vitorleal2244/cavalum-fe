@@ -1,0 +1,37 @@
+<main class="container page-content">
+  <div id="news">
+    <div class="page-header">
+      <div class="page-header__title">
+        <h1>Notícias</h1>
+      </div>
+      <div class="page-header__subtitle">
+        <p>
+          Sou um parágrafo. Aqui você pode adicionar seu texto.
+          É fácil, basta clicar em "Editar texto" ou clicar duas vezes sobre mim para editar o conteúdo, a fonte e mais.
+        </p>
+      </div>
+    </div>
+    <div class="content news">
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-3" *ngFor="let new of news|async">
+          <mat-card class="card" appearance="outlined">
+            <mat-card-header>
+              <div mat-card-avatar class="avatar-cavalum"></div>
+              <mat-card-title class="card__title">{{ new.title }}</mat-card-title>
+              <mat-card-subtitle class="card__subtitle">{{ new.date }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image class="card__image" src="../../../assets/images/news/news_{{ new.id }}.jpg" alt="{{ new.title }}" title="{{ new.title }}" />
+            <mat-card-content class="card__description">
+              <p>
+                {{ new.subtitle | slice:0:60 }}...
+              </p>
+            </mat-card-content>
+            <mat-card-actions class="card__actions">
+              <button mat-flat-button class="button primary">Ver mais</button> 
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -10,5 +10,6 @@ export const environment = {
   },
   api: {
     url: 'http://localhost:3000',
+    local: '/assets/temp_data/',
   },
 }
