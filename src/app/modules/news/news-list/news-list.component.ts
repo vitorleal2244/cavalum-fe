@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { MatCardModule } from '@angular/material/card'
 import { NewsService } from '../news.service'
-import { NewsList } from './news-list.interface'
+import { News } from '../news.interface'
 import { Observable } from 'rxjs'
 import { CommonModule } from '@angular/common'
 
@@ -13,9 +13,9 @@ import { CommonModule } from '@angular/common'
   standalone: true,
 })
 export class NewsListComponent implements OnInit {
-  public news!: Observable<NewsList[]>
+  public news!: Observable<News[]>
 
-  constructor(private newsService: NewsService) {}
+  constructor(private newsService: NewsService) { }
 
   ngOnInit() {
     this.getNews()

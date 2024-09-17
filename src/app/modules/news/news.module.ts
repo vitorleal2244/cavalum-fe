@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common'
 import { TranslateModule } from '@ngx-translate/core'
 import { NewsListComponent } from './news-list/news-list.component'
 import { NewsRoutingModule } from './news-routing.module';
-import { NewsDetailComponent } from './news-detail/news-detail.component'
+import { NewsDetailComponent } from './news-detail/news-detail.component';
 
 @NgModule({
   imports: [
@@ -12,9 +12,7 @@ import { NewsDetailComponent } from './news-detail/news-detail.component'
     TranslateModule.forChild(),
     NewsRoutingModule,
     NewsListComponent,
-  ],
-  declarations: [
-    NewsDetailComponent
+    NewsDetailComponent,
   ],
 })
-export class NewsModule {}
+export class NewsModule { }

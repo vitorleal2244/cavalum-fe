@@ -1,4 +1,4 @@
-export interface NewsList {
+export interface News {
   id: number
   title: string
   subtitle: string

@@ -28,6 +28,7 @@
     "dotenv": "^16.4.5",
     "logger": "^0.0.1",
     "mdb-angular-ui-kit": "^5.2.0",
+    "ng-image-slider": "^7.0.1",
     "ngx-logger": "^5.0.12",
     "ngx-spinner": "^16.0.2",
     "rxjs": "~7.8.0",

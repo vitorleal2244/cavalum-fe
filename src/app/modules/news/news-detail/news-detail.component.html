@@ -1,1 +1,111 @@
-<p>news-detail works!</p>
+<main class="container page-content">
+  <div class="content">
+    <div class="row">
+      <div class="col-sm-12 col-md-8">
+        <div class="news-detail">
+          <div class="news-detail__slider">
+            <div class="news-detail__slider__main-image">
+              <img src="../../../../assets/images/news/{{ currentImage }}" alt="" title="" />
+            </div>
+            <div class="news-detail__slider__other-images">
+              <ul>
+                <li *ngFor="let image of sliderImages" [ngClass]="{ 'selected': image.name === currentImage }">
+                  <img
+                    src="../../../../assets/images/news/{{ image.name }}"
+                    (click)="changeImage(image.name)"
+                    alt=""
+                    title=""
+                    onkeydown=""
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="news-detail__title">
+            <h2>Isto é o título</h2>
+            <small>2024/09/16</small>
+          </div>
+          <div class="news-detail__subtitle">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          </div>
+          <div class="news-detail__description">
+            <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+            </p>
+          </div>
+          <div class="news-detail__share">
+            <h3>Partilhar</h3>
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="../../../../assets/images/news_instagram.png" alt="Instagram" title="Instagram" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../../../../assets/images/news_facebook.png" alt="Facebook" title="Facebook" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="other-news">
+          <aside>
+            <div class="other-news__title">
+              <h3>Publicações recentes</h3>
+            </div>
+            <ul>
+              <li class="other-news__item">
+                <div class="row">
+                  <div class="col-sm-12 col-md-2">
+                    <div class="other-news__item__image">
+                      <img src="../../../../assets/images/news/news_1.jpg" alt="" title="" />
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-10">
+                    <div class="other-news__item__title">
+                      <h6>Isto é o titulo</h6>
+                      <small>2024/09/16</small>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="other-news__item">
+                <div class="row">
+                  <div class="col-sm-12 col-md-2">
+                    <div class="other-news__item__image">
+                      <img src="../../../../assets/images/news/news_2.jpg" alt="" title="" />
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-10">
+                    <div class="other-news__item__title">
+                      <h6>Isto é o titulo</h6>
+                      <small>2024/09/16</small>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="other-news__item">
+                <div class="row">
+                  <div class="col-sm-12 col-md-2">
+                    <div class="other-news__item__image">
+                      <img src="../../../../assets/images/news/news_3.jpg" alt="" title="" />
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-10">
+                    <div class="other-news__item__title">
+                      <h6>Isto é o titulo</h6>
+                      <small>2024/09/16</small>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
