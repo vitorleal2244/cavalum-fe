@@ -12,4 +12,5 @@ export const environment = {
     url: 'http://localhost:3000',
     local: '/assets/temp_data/',
   },
+  domain: 'http://localhost:4200',
 }

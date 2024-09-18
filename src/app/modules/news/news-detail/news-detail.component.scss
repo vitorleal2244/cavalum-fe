@@ -1,5 +1,13 @@
+@import '../../../styles/abstracts/_variables';
+
 .news-detail {
   padding: 0 60px;
+
+  &__back {
+    position: absolute;
+    z-index: 100;
+    margin: 10px;
+  }
 
   &__slider {
     padding-bottom: 30px;
@@ -94,12 +102,16 @@
 
     .other-news__item {
 
-      &__image {
-        width: 100%;
+      a {
+        color: $black;
 
-        img {
-          height: 50px;
-          width: 50px;
+        .other-news__item__image {
+          width: 100%;
+
+          img {
+            height: 50px;
+            width: 50px;
+          }
         }
       }
     }

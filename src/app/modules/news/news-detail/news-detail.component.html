@@ -3,11 +3,17 @@
     <div class="row">
       <div class="col-sm-12 col-md-8">
         <div class="news-detail">
+          <div class="news-detail__back button-icon" routerLink="/news">
+            <span class="material-symbols-outlined">
+              arrow_back_ios
+            </span> 
+            Voltar
+          </div>
           <div class="news-detail__slider">
             <div class="news-detail__slider__main-image">
-              <img src="../../../../assets/images/news/{{ currentImage }}" alt="" title="" />
+              <img [src]="currentImage" alt="" title="" />
             </div>
-            <div class="news-detail__slider__other-images">
+            <!-- <div class="news-detail__slider__other-images">
               <ul>
                 <li *ngFor="let image of sliderImages" [ngClass]="{ 'selected': image.name === currentImage }">
                   <img
@@ -19,20 +25,16 @@
                   />
                 </li>
               </ul>
-            </div>
+            </div> -->
           </div>
           <div class="news-detail__title">
-            <h2>Isto é o título</h2>
-            <small>2024/09/16</small>
+            <h2>{{ newsDetail.title }}</h2>
+            <small>{{ newsDetail.date }}</small>
           </div>
           <div class="news-detail__subtitle">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            {{ newsDetail.subtitle }}
           </div>
-          <div class="news-detail__description">
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-            </p>
-          </div>
+          <div class="news-detail__description" [innerHTML]="newsDetail.description"></div>
           <div class="news-detail__share">
             <h3>Partilhar</h3>
             <ul>
@@ -56,51 +58,23 @@
             <div class="other-news__title">
               <h3>Publicações recentes</h3>
             </div>
-            <ul>
-              <li class="other-news__item">
-                <div class="row">
-                  <div class="col-sm-12 col-md-2">
-                    <div class="other-news__item__image">
-                      <img src="../../../../assets/images/news/news_1.jpg" alt="" title="" />
+            <ul *ngIf="lastNews">
+              <li class="other-news__item" *ngFor="let new of lastNews|async">
+                <a routerLink="/news/{{ new.id }}" (click)="onChangeNews(new.id)">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-2">
+                      <div class="other-news__item__image">
+                        <img src="../../../../assets/images/news/news_{{ new.id }}.jpg" alt="{{ new.title }}" title="{{ new.title }}" />
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-10">
+                      <div class="other-news__item__title">
+                        <h6>{{ new.title }}</h6>
+                        <small>{{ new.date }}</small>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-sm-12 col-md-10">
-                    <div class="other-news__item__title">
-                      <h6>Isto é o titulo</h6>
-                      <small>2024/09/16</small>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="other-news__item">
-                <div class="row">
-                  <div class="col-sm-12 col-md-2">
-                    <div class="other-news__item__image">
-                      <img src="../../../../assets/images/news/news_2.jpg" alt="" title="" />
-                    </div>
-                  </div>
-                  <div class="col-sm-12 col-md-10">
-                    <div class="other-news__item__title">
-                      <h6>Isto é o titulo</h6>
-                      <small>2024/09/16</small>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="other-news__item">
-                <div class="row">
-                  <div class="col-sm-12 col-md-2">
-                    <div class="other-news__item__image">
-                      <img src="../../../../assets/images/news/news_3.jpg" alt="" title="" />
-                    </div>
-                  </div>
-                  <div class="col-sm-12 col-md-10">
-                    <div class="other-news__item__title">
-                      <h6>Isto é o titulo</h6>
-                      <small>2024/09/16</small>
-                    </div>
-                  </div>
-                </div>
+                </a>
               </li>
             </ul>
           </aside>
