@@ -1,7 +1,14 @@
 @import '../../../styles/abstracts/_variables';
 
-#trails {
+.trails {
   padding-bottom: $sector_separator_padding;
+
+  .card {
+
+    &__title {
+      padding-bottom: 10px !important;
+    }
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */

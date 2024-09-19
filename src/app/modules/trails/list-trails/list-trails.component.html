@@ -1,6 +1,6 @@
 <app-modal-bg *ngIf="is_modal_open" />
 <div class="container page-content">
-  <div id="trails">
+  <div class="trails">
     <div class="page-header">
       <div class="page-header__title">
         <h1>Nossos trilhos</h1>
@@ -19,11 +19,11 @@
               <mat-card-title class="card__title">{{ trail.title }}</mat-card-title>
             </mat-card-header>
             <img *ngIf="trail.image" mat-card-image [src]="trail.image" [alt]="trail.title">
-            <mat-card-content class="card__content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <mat-card-content class="card__description">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </mat-card-content>
-            <mat-card-actions>
-              <a routerLink="{{ trail.id }}" mat-button class="button secondary-white">Ver mais</a>
+            <mat-card-actions class="card__actions">
+              <a routerLink="{{ trail.id }}" mat-button class="button primary-black">Ver mais</a>
             </mat-card-actions>
           </mat-card>
         </div>
