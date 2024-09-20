@@ -29,23 +29,28 @@
           </div>
           <div class="news-detail__title">
             <h2>{{ newsDetail.title }}</h2>
-            <small>{{ newsDetail.date }}</small>
+            <small>
+              <span class="material-symbols-outlined">
+                calendar_today
+              </span>
+              {{ newsDetail.date }}
+            </small>
           </div>
           <div class="news-detail__subtitle">
             {{ newsDetail.subtitle }}
           </div>
-          <div class="news-detail__description" [innerHTML]="newsDetail.description"></div>
+          <div class="news-detail__description" ng-bind="textFromJSON" style="white-space:pre-wrap">{{ newsDetail.description }}</div>
           <div class="news-detail__share">
             <h3>Partilhar</h3>
             <ul>
               <li>
                 <a href="#">
-                  <img src="../../../../assets/images/news_instagram.png" alt="Instagram" title="Instagram" />
+                  <img src="../../../../assets/images/news_instagram.png" alt="Instagram" title="Instagram" (click)="shareOnInstagram()" />
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <img src="../../../../assets/images/news_facebook.png" alt="Facebook" title="Facebook" />
+                  <img src="../../../../assets/images/news_facebook.png" alt="Facebook" title="Facebook" (click)="shareOnFacebook()" />
                 </a>
               </li>
             </ul>

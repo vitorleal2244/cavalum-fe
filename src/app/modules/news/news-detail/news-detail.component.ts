@@ -8,7 +8,6 @@ import { NewsService } from '../news.service'
 import { CommonModule } from '@angular/common'
 import { ActivatedRoute, RouterLink } from '@angular/router'
 import { News, LastNews } from '../news.interface'
-import { Safe } from 'src/app/core/pipes/safe-html.pipe'
 import { CoreService } from 'src/app/core/services/core.service'
 import { map, Observable } from 'rxjs'
 
@@ -16,7 +15,7 @@ import { map, Observable } from 'rxjs'
   selector: 'app-news-detail',
   templateUrl: './news-detail.component.html',
   styleUrls: ['./news-detail.component.scss'],
-  imports: [CommonModule, Safe, RouterLink],
+  imports: [CommonModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
 })
@@ -50,13 +49,34 @@ export class NewsDetailComponent implements OnInit {
     this.changeDetector.detectChanges()
   }
 
+  public shareOnInstagram(): boolean {
+    window.open(
+      'https://instagram.com/accounts/login/?text=%20Check%20up%20this%20awesome%20content' +
+        encodeURIComponent(document.title) +
+        ':%20 ' +
+        encodeURIComponent(
+          'http://localhost:4200/news/' + this.newsID + this.newsDetail.title
+        )
+    )
+    return false
+  }
+
+  public shareOnFacebook(): boolean {
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u=' +
+        encodeURIComponent(
+          'http://localhost:4200/news/' + this.newsID + this.newsDetail.title
+        )
+    )
+    return false
+  }
+
   private getNewsDetail(): void {
     if (this.newsID && parseInt(this.newsID)) {
       this.newsService
         .getNewsById(parseInt(this.newsID))
         .subscribe((res: News) => {
           this.newsDetail = res
-
           this.coreService
             .fileExists(`assets/images/news/news_${this.newsID}.jpg`)
             .subscribe((res_slide: any) => {
