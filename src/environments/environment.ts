@@ -13,4 +13,7 @@ export const environment = {
     local: '/assets/temp_data/',
   },
   domain: 'http://localhost:4200',
+  email: {
+    public_key: 'iWYIoALgm04O0f___',
+  },
 }

@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "@auth0/auth0-angular": "^2.2.3",
+    "@emailjs/browser": "^4.4.1",
     "@ngrx/store": "^16.3.0",
     "@ngrx/store-devtools": "^16.3.0",
     "@ngx-translate/core": "^15.0.0",

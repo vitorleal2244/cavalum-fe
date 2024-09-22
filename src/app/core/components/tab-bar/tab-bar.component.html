@@ -106,6 +106,15 @@
       </li>
       <li>
         <a
+          routerLink="/news"
+          routerLinkActive="active"
+          (activate)="onActivate($event)"
+        >
+          <mat-icon aria-hidden="false" aria-label="News icon" fontIcon="newspaper"></mat-icon>
+        </a>
+      </li>
+      <li>
+        <a
           routerLink="/contact"
           routerLinkActive="active"
           (activate)="onActivate($event)"

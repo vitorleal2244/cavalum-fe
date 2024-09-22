@@ -19,6 +19,8 @@ import {
 import { Observable, of } from 'rxjs'
 import { Errors } from 'src/app/core/interfaces/errors.interface'
 import { CommonModule } from '@angular/common'
+import { send, init } from '@emailjs/browser'
+import { CoreService } from 'src/app/core/services/core.service'
 
 /**
  * Contact Component
@@ -51,7 +53,8 @@ export class ContactComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private cd: ChangeDetectorRef,
-    private readonly contactService: ContactService
+    private readonly contactService: ContactService,
+    private readonly coreService: CoreService
   ) {}
 
   /**
@@ -86,7 +89,14 @@ export class ContactComponent implements OnInit {
             if (res.status === 200) {
               this.sentForm$ = of(true)
               this.errors$ = of([])
-              this.cd.detectChanges()
+              this.sendEmail().then(
+                (response: any) => {
+                  this.cd.detectChanges()
+                },
+                (error: Error) => {
+                  console.error('Email not sent')
+                }
+              )
             } else {
               this.sentForm$ = of(false)
               this.errors$ = of([
@@ -107,5 +117,23 @@ export class ContactComponent implements OnInit {
     } catch (error) {
       console.error(error)
     }
+  }
+
+  private async sendEmail(): Promise<void> {
+    var templateParams = {
+      from_name: this.contactForm.value.name,
+      to_name: 'Cavalum',
+      from_email: this.contactForm.value.email,
+      subject: 'Formulário dos contactos: ' + this.contactForm.value.subject,
+      message:
+        'O utilizador com o nome: ' +
+        this.contactForm.value.name +
+        ' (' +
+        this.contactForm.value.email +
+        ') mandou-lhe a seguinte mensagem: \n\n ' +
+        this.contactForm.value.message,
+    }
+
+    this.coreService.sendEmail(templateParams)
   }
 }
