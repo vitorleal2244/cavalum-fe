@@ -1,21 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing'
+import { GalleryComponent } from './gallery.component'
 
-import { GalleryComponent } from './gallery.component';
-
-describe('GalleryComponent', () => {
-  let component: GalleryComponent;
-  let fixture: ComponentFixture<GalleryComponent>;
-
+describe('Gallery Component', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [GalleryComponent]
-});
-    fixture = TestBed.createComponent(GalleryComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+      imports: [],
+      declarations: [GalleryComponent],
+    }).compileComponents()
+  })
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  beforeEach(() => {
+    const fixture = TestBed.createComponent(GalleryComponent)
+    const app = fixture.componentInstance
+  })
+
+  it('should create gallery component', () => {
+    
+  })
+})

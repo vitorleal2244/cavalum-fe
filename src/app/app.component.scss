@@ -1,0 +1,33 @@
+@import './styles/abstracts/_variables';
+
+.loading {
+    left: 0 !important;
+    top: 0 !important;
+    z-index: 10000 !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
+    background-color: rgba(0,0,0,0.8) !important;
+    cursor: pointer !important;
+    visibility: visible !important;
+    transition: visibility 0s, opacity 0.4s linear !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+
+    &__logo {
+        width: 200px;
+        height: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__text {
+        color: $white;
+        font-weight: 100;
+    }
+}
