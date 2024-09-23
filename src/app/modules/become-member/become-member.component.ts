@@ -59,13 +59,23 @@ export class BecomeMemberComponent implements OnInit {
     this.sentForm$ = of(false)
 
     this.becomeMemberForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       contact: [
         '',
         [Validators.required, Validators.minLength(9), Validators.maxLength(9)],
       ],
+      birthDate: ['', Validators.required],
+      address: ['', Validators.required],
+      cp: ['', Validators.required],
+      county: ['', Validators.required],
+      district: ['', Validators.required],
+      country: ['', Validators.required],
+      nationality: ['', Validators.required],
+      idNumber: ['', [Validators.minLength(0), Validators.maxLength(9)]],
+      nif: ['', [Validators.minLength(0), Validators.maxLength(9)]],
+      educationalQualifications: [''],
+      job: [''],
     })
   }
 
@@ -123,14 +133,34 @@ export class BecomeMemberComponent implements OnInit {
       subject: 'Pedido de adesão para membro',
       message:
         'Um novo utilizador fez um pedido de adesão para membro Cavalum. Abaixo encontra-se as informações dadas pelo mesmo.\n\n ' +
-        'Primeiro nome: ' +
-        this.becomeMemberForm.value.firstName +
-        '\n Último nome: ' +
-        this.becomeMemberForm.value.lastName +
+        'Nome: ' +
+        this.becomeMemberForm.value.name +
         '\n Email: ' +
         this.becomeMemberForm.value.email +
         '\n Contacto: ' +
         this.becomeMemberForm.value.contact +
+        '\n Data de nascimento: ' +
+        this.becomeMemberForm.value.birthDate +
+        '\n Morada: ' +
+        this.becomeMemberForm.value.address +
+        '\n Código-Postal: ' +
+        this.becomeMemberForm.value.cp +
+        '\n Concelho: ' +
+        this.becomeMemberForm.value.county +
+        '\n Distrito: ' +
+        this.becomeMemberForm.value.district +
+        '\n País: ' +
+        this.becomeMemberForm.value.country +
+        '\n Nacionalidade: ' +
+        this.becomeMemberForm.value.nationality +
+        '\n Nº BI/CC/Passaporte: ' +
+        this.becomeMemberForm.value.idNumber +
+        '\n NIF: ' +
+        this.becomeMemberForm.value.nif +
+        '\n Qualificações literárias: ' +
+        this.becomeMemberForm.value.educationalQualifications +
+        '\n Profissão: ' +
+        this.becomeMemberForm.value.job +
         '\n\n O utilizador encontra-se no estado pendente de aprovação.',
     }
 

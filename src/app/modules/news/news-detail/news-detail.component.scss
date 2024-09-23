@@ -126,3 +126,34 @@
     }
   }
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .news-detail {
+    padding: 0;
+
+    &__title {
+      padding: 0 20px;
+    }
+
+    &__subtitle {
+      padding: 0 20px;
+    }
+
+    &__description {
+      padding: 20px 20px;
+    }
+
+    &__share {
+      padding: 0 20px 40px;
+    }
+  }
+
+  .other-news {
+    padding: 0 20px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+}

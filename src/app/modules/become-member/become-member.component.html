@@ -2,7 +2,7 @@
     <div id="become-member">
         <div class="page-header">
             <div class="page-header__title">
-              <h1>Tornar-se membro</h1>
+              <h1>Tornar-se sócio</h1>
             </div>
             <div class="page-header__subtitle">
               <p>
@@ -25,21 +25,12 @@
                                 <p>Formulário submetido com successo!</p>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-sm-12">
                                     <mat-form-field appearance="fill">
                                         <mat-label>Nome</mat-label>
-                                        <input matInput formControlName="firstName" />
-                                        <div *ngIf="becomeMemberForm.value.firstName.touched && becomeMemberForm.value.firstName.errors?.required">
+                                        <input matInput formControlName="name" />
+                                        <div *ngIf="becomeMemberForm.value.name.touched && becomeMemberForm.value.name.errors?.required">
                                             <mat-error>O nome é um campo <strong>obrigatório</strong>!</mat-error>
-                                        </div>
-                                    </mat-form-field>
-                                </div>
-                                <div class="col-md-6">
-                                    <mat-form-field appearance="fill">
-                                        <mat-label>Apelido</mat-label>
-                                        <input matInput formControlName="lastName" />
-                                        <div *ngIf="becomeMemberForm.value.lastName.touched && becomeMemberForm.value.lastName.errors?.required">
-                                            <mat-error>O apelido é um campo <strong>obrigatório</strong>!</mat-error>
                                         </div>
                                     </mat-form-field>
                                 </div>
@@ -55,12 +46,111 @@
                                         </div>
                                     </mat-form-field>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <mat-form-field appearance="fill">
                                         <mat-label>Contacto</mat-label>
                                         <input matInput formControlName="contact" />
                                         <div *ngIf="becomeMemberForm.value.contact.touched && becomeMemberForm.value.contact.errors?.required">
                                             <mat-error>O contacto é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Data de nascimento</mat-label>
+                                        <input matInput formControlName="birthDate" placeholder="YYYY/MM/DD" />
+                                        <div *ngIf="becomeMemberForm.value.birthDate.touched && becomeMemberForm.value.birthDate.errors?.required">
+                                            <mat-error>A data de nascimento é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Morada</mat-label>
+                                        <input matInput formControlName="address" />
+                                        <div *ngIf="becomeMemberForm.value.address.touched && becomeMemberForm.value.address.errors?.required">
+                                            <mat-error>A morada é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Código-Postal</mat-label>
+                                        <input matInput formControlName="cp" />
+                                        <div *ngIf="becomeMemberForm.value.cp.touched && becomeMemberForm.value.cp.errors?.required">
+                                            <mat-error>O código-postal é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Concelho</mat-label>
+                                        <input matInput formControlName="county" />
+                                        <div *ngIf="becomeMemberForm.value.county.touched && becomeMemberForm.value.county.errors?.required">
+                                            <mat-error>O concelho é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Distrito</mat-label>
+                                        <input matInput formControlName="district" />
+                                        <div *ngIf="becomeMemberForm.value.district.touched && becomeMemberForm.value.district.errors?.required">
+                                            <mat-error>O distrito é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>País</mat-label>
+                                        <input matInput formControlName="country" />
+                                        <div *ngIf="becomeMemberForm.value.country.touched && becomeMemberForm.value.country.errors?.required">
+                                            <mat-error>O país é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Nacionalidade</mat-label>
+                                        <input matInput formControlName="nationality" />
+                                        <div *ngIf="becomeMemberForm.value.nationality.touched && becomeMemberForm.value.nationality.errors?.required">
+                                            <mat-error>A nacionalidade é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Nº BI/CC/Passporte</mat-label>
+                                        <input matInput formControlName="idNumber" />
+                                        <div *ngIf="becomeMemberForm.value.idNumber.touched && becomeMemberForm.value.idNumber.errors?.required">
+                                            <mat-error>O nº bi/cc/passporte é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-6">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>NIF</mat-label>
+                                        <input matInput formControlName="nif" />
+                                        <div *ngIf="becomeMemberForm.value.nif.touched && becomeMemberForm.value.nif.errors?.required">
+                                            <mat-error>O nif é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Qualificações literárias</mat-label>
+                                        <input matInput formControlName="educationalQualifications" />
+                                        <div *ngIf="becomeMemberForm.value.educationalQualifications.touched && becomeMemberForm.value.educationalQualifications.errors?.required">
+                                            <mat-error>O qualificações literárias é um campo <strong>obrigatório</strong>!</mat-error>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12">
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Profissão</mat-label>
+                                        <input matInput formControlName="job" />
+                                        <div *ngIf="becomeMemberForm.value.job.touched && becomeMemberForm.value.job.errors?.required">
+                                            <mat-error>A profissão é um campo <strong>obrigatório</strong>!</mat-error>
                                         </div>
                                     </mat-form-field>
                                 </div>
