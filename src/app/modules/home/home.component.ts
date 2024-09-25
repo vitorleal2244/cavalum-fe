@@ -6,7 +6,7 @@
  * Copyright © 2024 Vitor Leal
  */
 
-import { Component, inject } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { NewsComponent } from '../../core/components/news/news.component'
 import { TestimonialComponent } from '../../core/components/testimonial/testimonial.component'
 import { SvgMapComponent } from '../../../assets/images/svg/map/svg_map.component'
@@ -21,6 +21,10 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { MatDialog } from '@angular/material/dialog'
 import { ScheduleActionComponent } from './dialogs/schedule-action.component'
 import { RouterLink } from '@angular/router'
+import { News } from '../news/news.interface'
+import { map, Observable } from 'rxjs'
+import { NewsService } from '../news/news.service'
+import { CoreService } from 'src/app/core/services/core.service'
 
 /**
  * Home Component
@@ -48,7 +52,7 @@ import { RouterLink } from '@angular/router'
     RouterLink,
   ],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   public testimonials = [
     {
       id: 1,
@@ -97,6 +101,8 @@ export class HomeComponent {
     },
   ]
 
+  public lastNews!: Observable<News[]>
+
   /**
    * Creates an instance of HomeComponent
    *
@@ -104,7 +110,15 @@ export class HomeComponent {
    *
    * @memberof HomeComponent
    */
-  constructor(private readonly matDialog: MatDialog) {}
+  constructor(
+    private readonly matDialog: MatDialog,
+    private readonly newsService: NewsService,
+    private readonly coreService: CoreService
+  ) {}
+
+  ngOnInit(): void {
+    this.getLastNews()
+  }
 
   /**
    * When this function is triggered, a modal will appear with ScheduleActionComponent content
@@ -121,5 +135,23 @@ export class HomeComponent {
 
   public scrollTo(el: HTMLElement) {
     el.scrollIntoView()
+  }
+
+  private getLastNews(): void {
+    this.lastNews = this.newsService.getLastNews(0).pipe(
+      map((res: any) => {
+        res.forEach((value: any) => {
+          this.coreService
+            .fileExists(`assets/images/news/news_${value.id}.jpg`)
+            .subscribe((res_slide: any) => {
+              if (res_slide) {
+                value = { ...value, image: res_slide }
+              }
+            })
+        })
+
+        return res
+      })
+    )
   }
 }

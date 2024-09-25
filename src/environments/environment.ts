@@ -9,10 +9,10 @@ export const environment = {
     redirectUri: window.location.origin,
   },
   api: {
-    url: 'http://localhost:3000',
+    url: 'https://peaceful-coast-94321-b252a0ecc94b.herokuapp.com',
     local: '/assets/temp_data/',
   },
-  domain: 'http://localhost:4200',
+  domain: 'https://cavalum.pt',
   email: {
     public_key: 'iWYIoALgm04O0f___',
   },

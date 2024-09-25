@@ -113,6 +113,38 @@
 </section>
 <section id="home-news">
   <div class="container">
-    <app-news />
+    <div class="home-news">
+      <div class="home-news__header">
+        <div class="home-news__title">
+          <h1>Últimas noticias</h1>
+        </div>
+        <div class="home-news__subtitle">
+          <p>Mantenha-se atualizado com as ultimas atualizações sobre o Cavalum</p>
+        </div>
+      </div>
+      <div class="home-news__content">
+        <div class="row">
+          <div class="col-sm-12 col-md-4" *ngFor="let new of lastNews|async">
+            <mat-card class="card" appearance="outlined">
+              <mat-card-header>
+                <div mat-card-avatar class="avatar-cavalum"></div>
+                <mat-card-title class="card__title">{{ new.title }}</mat-card-title>
+                <mat-card-subtitle class="card__subtitle">{{ new.date }}</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image class="card__image" src="../../../assets/images/news/news_{{ new.id }}.jpg" alt="{{ new.title }}" title="{{ new.title }}" />
+              <mat-card-content class="card__description">
+                <p>
+                  {{ new.subtitle | slice:0:60 }}...
+                </p>
+              </mat-card-content>
+              <mat-card-actions class="card__actions">
+                <a mat-flat-button class="button primary-black" routerLink="{{ new.id }}">Ver mais</a> 
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </section>

@@ -166,6 +166,24 @@
 
 #home-news {
   padding: $sector_separator_padding 0;
+
+  .home-news {
+    text-align: center;
+
+    &__title {
+      padding: $gap 0;
+    }
+
+    &__subtitle {
+      padding: 0 $gap_sides $gap;
+    }
+
+    &__content {
+      padding: $gap;
+      color: #FFFFFF;
+      text-align: left;
+    }
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
