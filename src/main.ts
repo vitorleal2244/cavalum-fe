@@ -25,11 +25,13 @@ import {
   withInterceptorsFromDi,
   provideHttpClient,
   HttpClient,
+  HTTP_INTERCEPTORS,
 } from '@angular/common/http'
 import { NgxSpinnerModule } from 'ngx-spinner'
 import { AppRoutingModule } from './app/app-routing.module'
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser'
 import { LOCALE_ID, isDevMode, importProvidersFrom } from '@angular/core'
+import { HttpRequestInterceptor } from './app/http-request.interceptor'
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -67,5 +69,10 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(withInterceptorsFromDi()),
     provideAnimations(),
     provideAnimations(),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpRequestInterceptor,
+      multi: true,
+    },
   ],
 }).catch((err) => console.error(err))

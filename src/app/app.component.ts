@@ -1,19 +1,22 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { TranslateService, TranslateModule } from '@ngx-translate/core'
 import { NgxSpinnerModule } from 'ngx-spinner'
-import {
-  NavigationCancel,
-  NavigationEnd,
-  NavigationError,
-  NavigationStart,
-  Router,
-  RouterEvent,
-  RouterOutlet,
-} from '@angular/router'
+import { Router, RouterOutlet } from '@angular/router'
 import { FooterComponent } from './core/components/footer/footer.component'
 import { TabBarComponent } from './core/components/tab-bar/tab-bar.component'
 import { CommonModule } from '@angular/common'
+import { LoadingService } from './core/services/loading.service'
+import { delay } from 'rxjs'
+import { HttpRequestInterceptor } from './http-request.interceptor'
+import { HTTP_INTERCEPTORS } from '@angular/common/http'
 
+/**
+ * App Component
+ *
+ * @class
+ * @exports
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -28,32 +31,32 @@ import { CommonModule } from '@angular/common'
     CommonModule,
   ],
 })
-export class AppComponent {
-  public showLoading = true
+export class AppComponent implements OnInit {
+  public loading: boolean = false
 
-  constructor(private translate: TranslateService, private router: Router) {
+  constructor(
+    private readonly translate: TranslateService,
+    private readonly loadingService: LoadingService
+  ) {
     translate.setDefaultLang('pt')
     translate.use('pt')
-
-    router.events.subscribe((event: any) => {
-      this.navigationInterceptor(event)
-    })
   }
 
-  navigationInterceptor(event: RouterEvent): void {
-    if (event instanceof NavigationStart) {
-      this.showLoading = true
-    }
-    if (event instanceof NavigationEnd) {
-      this.showLoading = false
-    }
+  ngOnInit() {
+    this.listenToLoading()
+  }
 
-    // Set loading state to false in both of the below events to hide the spinner in case a request fails
-    if (event instanceof NavigationCancel) {
-      this.showLoading = false
-    }
-    if (event instanceof NavigationError) {
-      this.showLoading = false
-    }
+  /**
+   * Listen to the loadingSub property in the LoadingService class. This drives the
+   * display of the loading spinner.
+   *
+   * @returns {void}
+   *
+   * @memberof AppComponent
+   */
+  listenToLoading(): void {
+    this.loadingService.loadingSub.pipe(delay(0)).subscribe((loading) => {
+      this.loading = loading
+    })
   }
 }
