@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
       id: 1,
       author: 'Joana',
       position: 'Voluntária',
-      text: 'Sou um depoimento. Clique aqui para adicionar um texto que diga algo bom sobre você e sua experiência como voluntário da Cavalum.',
+      text: 'Todos os sábados é uma aventura nova! Adoro!',
     },
     {
       id: 2,

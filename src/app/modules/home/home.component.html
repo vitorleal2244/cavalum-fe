@@ -90,20 +90,17 @@
     </div>
   </section>
 </div>
-<section id="home-testimonials">
+<section class="home-testimonials">
   <div class="background">
     <h1>O que dizem sobre nós?</h1>
     <div class="row">
       <div *ngFor="let testimonial of testimonials" class="col-sm-4">
         <mat-card class="testimonial" appearance="outlined">
-          <mat-card-header>
-            <div mat-card-avatar class="avatar">
-              <img src="../../../assets/images/avatars/avatar1.jpg" [alt]="testimonial.author" [title]="testimonial.author" />
-            </div>
+          <mat-card-header class="home-testimonials__header">
             <mat-card-title>{{ testimonial.author }}</mat-card-title>
             <mat-card-subtitle>{{ testimonial.position }}</mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content>
+          <mat-card-content class="home-testimonials__content">
             <p>{{ testimonial.text }}</p>
           </mat-card-content>
         </mat-card>
