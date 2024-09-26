@@ -11,7 +11,7 @@ import { ModalBgComponent } from '../../../core/components/modal-bg/modal-bg.com
 import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
 import { CommonModule } from '@angular/common'
-import { Trail } from 'src/app/core/interfaces/trail.interface'
+import { Trail } from 'src/app/modules/trails/trail.interface'
 import { Observable } from 'rxjs'
 import { TrailsService } from '../trails.service'
 import { RouterLink } from '@angular/router'

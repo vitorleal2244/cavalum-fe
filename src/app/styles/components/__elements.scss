@@ -48,6 +48,10 @@ ul, p, ol {
     color: $white !important;
   }
 
+  hr {
+    border: 1px solid rgba(0, 0, 0, .3);
+  }
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   h1 {

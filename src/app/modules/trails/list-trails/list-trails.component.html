@@ -16,9 +16,9 @@
         <div class="col-lg-4" *ngFor="let trail of trails | async">
           <mat-card class="card" appearance="outlined">
             <mat-card-header class="card__header">
-              <mat-card-title class="card__title">{{ trail.title }}</mat-card-title>
+              <mat-card-title class="card__title">{{ trail.name }}</mat-card-title>
             </mat-card-header>
-            <img *ngIf="trail.image" mat-card-image [src]="trail.image" [alt]="trail.title">
+            <img *ngIf="trail.image" mat-card-image [src]="trail.image" [alt]="trail.name">
             <mat-card-content class="card__description">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </mat-card-content>

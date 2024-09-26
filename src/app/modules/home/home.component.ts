@@ -56,8 +56,8 @@ export class HomeComponent implements OnInit {
   public testimonials = [
     {
       id: 1,
-      author: 'Carla',
-      position: 'Voluntário',
+      author: 'Joana',
+      position: 'Voluntária',
       text: 'Sou um depoimento. Clique aqui para adicionar um texto que diga algo bom sobre você e sua experiência como voluntário da Cavalum.',
     },
     {

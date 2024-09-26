@@ -1,113 +1,122 @@
-<div class="page-trail-detail-content" style="background-image: url('{{ trailInfo.image }}');">
-  <div class="container">
-    <div class="trail-detail">
-      <div class="trail-detail__back button-back" routerLink="/trails">
-        <span class="material-symbols-outlined">
-          arrow_back_ios
-        </span> 
-        Voltar
-      </div>
-      <div class="trail-detail__title">
-        <h1>{{ trailInfo.title }}</h1>
-      </div>
-      <div class="trail-detail__details">
-        <div class="trail-detail__info">
-          <ul>
-            <li>
-              <mat-icon aria-hidden="false" aria-label="Example home icon" class="icon" fontIcon="location_on"></mat-icon>
-              Parque de Penafiel
-            </li>
-            <li>
-              <mat-icon aria-hidden="false" aria-label="straighten icon" class="icon" fontIcon="straighten"></mat-icon>
-              13km
-            </li>
-            <li>
-              <mat-icon aria-hidden="false" aria-label="square_foot icon" class="icon" fontIcon="square_foot"></mat-icon>
-              25 m
-            </li>
-            <li class="desktop">
-              <mat-icon aria-hidden="false" aria-label="laps icon" class="icon" fontIcon="repeat"></mat-icon>
-              Loop
-            </li>
-          </ul>
+<div *ngIf="trailInfo$ | async; let trailInfo">
+  <div class="page-trail-detail-content" style="background-image: url('{{ currentImage }}');">
+    <div class="container">
+      <div class="trail-detail">
+        <div class="trail-detail__back button-back" routerLink="/trails">
+          <span class="material-symbols-outlined">
+            arrow_back_ios
+          </span> 
+          Voltar
         </div>
-
-        <h3 *ngIf="commentsVisible">Avaliações</h3>
-        <div class="trail-detail__reviews" *ngIf="commentsVisible">
-          <div class="trail-detail__stars">
+        <div class="trail-detail__title">
+          <h1>{{ trailInfo.name }}</h1>
+        </div>
+        <div class="trail-detail__details">
+          <div class="trail-detail__info">
             <ul>
               <li>
-                <small>5 estrelas</small>
-                <mat-progress-bar mode="determinate" value="40" class="progress-bar"></mat-progress-bar>
+                <mat-icon aria-hidden="false" aria-label="Example home icon" class="icon" fontIcon="location_on"></mat-icon>
+                {{ trailInfo.address }} - {{ trailInfo.city }}
               </li>
               <li>
-                <small>4 estrelas</small>
-                <mat-progress-bar mode="determinate" value="10" class="progress-bar"></mat-progress-bar>
+                <mat-icon aria-hidden="false" aria-label="straighten icon" class="icon" fontIcon="straighten"></mat-icon>
+                {{ trailInfo.length }}km
               </li>
               <li>
-                <small>3 estrelas</small>
-                <mat-progress-bar mode="determinate" value="0" class="progress-bar"></mat-progress-bar>
+                <mat-icon aria-hidden="false" aria-label="square_foot icon" class="icon" fontIcon="square_foot"></mat-icon>
+                {{ trailInfo.elevationGain }} m
               </li>
-              <li>
-                <small>2 estrelas</small>
-                <mat-progress-bar mode="determinate" value="2" class="progress-bar"></mat-progress-bar>
-              </li>
-              <li>
-                <small>1 estrela</small>
-                <mat-progress-bar mode="determinate" value="0" class="progress-bar"></mat-progress-bar>
+              <li class="desktop">
+                <mat-icon aria-hidden="false" aria-label="laps icon" class="icon" fontIcon="repeat"></mat-icon>
+                {{ trailInfo.routeType | uppercase }}
               </li>
             </ul>
           </div>
-          <div class="trail-detail__average">
-            <h1>4.8</h1>
-            <small>7 comentários</small>
+
+          <h3 *ngIf="commentsVisible">Avaliações</h3>
+          <div class="trail-detail__reviews" *ngIf="commentsVisible">
+            <div class="trail-detail__stars">
+              <ul>
+                <li>
+                  <small>5 estrelas</small>
+                  <mat-progress-bar mode="determinate" value="40" class="progress-bar"></mat-progress-bar>
+                </li>
+                <li>
+                  <small>4 estrelas</small>
+                  <mat-progress-bar mode="determinate" value="10" class="progress-bar"></mat-progress-bar>
+                </li>
+                <li>
+                  <small>3 estrelas</small>
+                  <mat-progress-bar mode="determinate" value="0" class="progress-bar"></mat-progress-bar>
+                </li>
+                <li>
+                  <small>2 estrelas</small>
+                  <mat-progress-bar mode="determinate" value="2" class="progress-bar"></mat-progress-bar>
+                </li>
+                <li>
+                  <small>1 estrela</small>
+                  <mat-progress-bar mode="determinate" value="0" class="progress-bar"></mat-progress-bar>
+                </li>
+              </ul>
+            </div>
+            <div class="trail-detail__average">
+              <h1>4.8</h1>
+              <small>7 comentários</small>
+            </div>
           </div>
-        </div>
-        <div class="trail-detail__comment-search" *ngIf="commentsVisible">
-          <mat-form-field class="example-full-width">
-            <mat-label>Procurar avaliações</mat-label>
-            <input matInput #search maxlength="256" placeholder="">
-            <mat-icon matSuffix>search</mat-icon>
-          </mat-form-field>
-        </div>
-        <div class="trail-detail__comments" *ngIf="commentsVisible">
-          <mat-card class="trail-detail__coment" appearance="outlined">
-            <mat-card-header>
-              <div mat-card-avatar class="avatar"></div>
-              <mat-card-title>Shiba Inu</mat-card-title>
-              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-              <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
-              </p>
-            </mat-card-content>
-          </mat-card>
+          <div class="trail-detail__comment-search" *ngIf="commentsVisible">
+            <mat-form-field class="example-full-width">
+              <mat-label>Procurar avaliações</mat-label>
+              <input matInput #search maxlength="256" placeholder="">
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+          </div>
+          <div class="trail-detail__comments" *ngIf="commentsVisible">
+            <mat-card class="trail-detail__coment" appearance="outlined">
+              <mat-card-header>
+                <div mat-card-avatar class="avatar"></div>
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                  bred for hunting.
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="page-content" style="padding-top: 20px;">
-  <div class="container">
-    <div class="trail-detail__description">
-      Head out on this 1.3-km loop trail near Marecos, Porto District. Generally considered an easy route, it takes an average of 19 min to complete.
-      This trail is great for mountain biking, running, and walking, and it's unlikely you'll encounter many other people while exploring.
-      The trail is open year-round and is beautiful to visit anytime. Dogs are welcome and may be off-leash in some areas.
-    </div>
-
-    <div class="trail-detail__tags">
-      <mat-chip-set aria-label="Fish selection">
-        <mat-chip class="tag">Moutain Biking</mat-chip>
-        <mat-chip class="tag">Running</mat-chip>
-        <mat-chip class="tag">Walking</mat-chip>
-        <mat-chip class="tag">Dog-Friendly</mat-chip>
-        <mat-chip class="tag">Kid-Friendly</mat-chip>
-        <mat-chip class="tag">Forest</mat-chip>
-        <mat-chip class="tag">River</mat-chip>
-      </mat-chip-set>
+  <div class="page-content" style="padding-top: 20px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <div class="trail-detail__information">
+            {{ trailInfo.information }}
+          </div>
+          <hr />
+          <div class="trail-detail__tags">
+            <mat-chip-set aria-label="Fish selection">
+              <mat-chip class="tag" *ngFor="let tag of trailInfo.tags">
+                {{ tag }}
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+          <div class="trail-detail__description">
+            <h3>Descrição</h3>
+            <p>{{ trailInfo.description }}</p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="trail-detail__trail-view">
+            <img src="../../../../assets/images/trails/trail_{{ trailInfo.id }}_small.jpg" alt="{{ trailInfo.name }}" title="{{ trailInfo.name }}" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
