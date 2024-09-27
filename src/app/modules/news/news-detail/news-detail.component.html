@@ -39,7 +39,16 @@
           <div class="news-detail__subtitle">
             {{ newsDetail.subtitle }}
           </div>
-          <div class="news-detail__description" ng-bind="textFromJSON" style="white-space:pre-wrap">{{ newsDetail.description }}</div>
+          <div class="news-detail__description" [ngClass]="{'has-tags': newsDetail.tags }" ng-bind="textFromJSON" style="white-space:pre-wrap">
+            {{ newsDetail.description }}
+          </div>
+          <div class="news-detail__tags" *ngIf="newsDetail.tags">
+            <ul>
+              <li *ngFor="let tag of newsDetail.tags">
+                <a href="https://www.instagram.com/explore/search/keyword/?q={{ tag }}" target="_blank">#{{ tag }}</a>
+              </li>
+            </ul>
+          </div>
           <div class="news-detail__share">
             <h3>Partilhar</h3>
             <ul>

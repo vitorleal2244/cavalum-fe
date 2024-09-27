@@ -75,16 +75,28 @@ export class NewsDetailComponent implements OnInit {
     if (this.newsID && parseInt(this.newsID)) {
       this.newsService
         .getNewsById(parseInt(this.newsID))
+        .pipe(
+          map((res) => {
+            // Verify if image exists
+            this.coreService
+              .fileExists(`assets/images/news/news_${this.newsID}.jpg`)
+              .subscribe((res_slide: any) => {
+                if (res_slide) {
+                  this.currentImage = res_slide
+                  this.changeDetector.detectChanges()
+                }
+              })
+
+            // Get all the tags
+            let splitted_string = res.description.split('#')
+            res.description = splitted_string[0]
+            res = { ...res, tags: splitted_string.splice(1) }
+
+            return res
+          })
+        )
         .subscribe((res: News) => {
           this.newsDetail = res
-          this.coreService
-            .fileExists(`assets/images/news/news_${this.newsID}.jpg`)
-            .subscribe((res_slide: any) => {
-              if (res_slide) {
-                this.currentImage = res_slide
-                this.changeDetector.detectChanges()
-              }
-            })
         })
     }
   }
