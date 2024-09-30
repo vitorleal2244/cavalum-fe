@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common'
 import { ActivatedRoute, RouterLink } from '@angular/router'
 import { News, LastNews } from '../news.interface'
 import { CoreService } from 'src/app/core/services/core.service'
-import { map, Observable } from 'rxjs'
+import { map, Observable, take } from 'rxjs'
 import { Meta } from '@angular/platform-browser'
 
 @Component({
@@ -78,6 +78,7 @@ export class NewsDetailComponent implements OnInit {
       this.newsService
         .getNewsById(parseInt(this.newsID))
         .pipe(
+          take(1),
           map((res) => {
             // Verify if image exists
             this.coreService
@@ -92,7 +93,11 @@ export class NewsDetailComponent implements OnInit {
             // Get all the tags
             let splitted_string = res.description.split('#')
             res.description = splitted_string[0]
-            res = { ...res, tags: splitted_string.splice(1) }
+            res = {
+              ...res,
+              tags: splitted_string.splice(1),
+              image: this.currentImage,
+            }
 
             return res
           })
@@ -100,17 +105,14 @@ export class NewsDetailComponent implements OnInit {
         .subscribe((res: News) => {
           this.newsDetail = res
 
-          // Set metatags
-          this.coreService.setMetaTags(
-            this.newsDetail.title,
-            this.newsDetail.subtitle,
-            '',
-            'news/' + this.newsID,
-            this.currentImage,
-            'news/' + this.newsID
-          )
+          this.coreService.titleTag = this.newsDetail.title
+          this.coreService.descriptionTag = this.newsDetail.subtitle
+          this.coreService.keywordsTag = this.newsDetail.title
+          this.coreService.urlTag = `news/${this.newsDetail.id}`
+          this.coreService.imageTag = this.newsDetail.image
 
-          console.log(this.metaService.getTag("name='title'"))
+          // Set metatags
+          this.coreService.setMetaTags()
         })
     }
   }

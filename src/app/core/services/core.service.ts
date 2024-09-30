@@ -12,12 +12,58 @@ export class CoreService {
   private readonly PUBLIC_KEY: string = environment.email.public_key
   private canonicalLink!: HTMLLinkElement
 
+  private _titleTag = ''
+  private _descriptionTag = ''
+  private _keywordsTag = ''
+  private _urlTag = ''
+  private _imageTag = ''
+
   constructor(
     private readonly http: HttpClient,
     private readonly metaService: Meta,
     @Inject(DOCUMENT) private document: Document
   ) {
     this.initEmailService()
+  }
+
+  public get titleTag() {
+    return this._titleTag
+  }
+
+  public set titleTag(value: string) {
+    this._titleTag = value
+  }
+
+  public get descriptionTag() {
+    return this._descriptionTag
+  }
+
+  public set descriptionTag(value: string) {
+    this._descriptionTag = value
+  }
+
+  public get keywordsTag() {
+    return this._keywordsTag
+  }
+
+  public set keywordsTag(value: string) {
+    this._keywordsTag = value
+  }
+
+  public get urlTag() {
+    return this._urlTag
+  }
+
+  public set urlTag(value: string) {
+    this._urlTag = value
+  }
+
+  public get imageTag() {
+    return this._imageTag
+  }
+
+  public set imageTag(value: string) {
+    this._imageTag = value
   }
 
   public fileExists(url: string): Observable<string | boolean> {
@@ -37,47 +83,13 @@ export class CoreService {
     return await send('service_gz4orr9', 'template_cpq90pf', templateParams)
   }
 
-  public setMetaTags(
-    title: string = '',
-    description: string = '',
-    keywords: string = '',
-    url: string = '',
-    image: string = '',
-    canonical: string = ''
-  ) {
-    if (title) {
-      this.metaService.updateTag({ name: 'title', content: title })
-      this.metaService.updateTag({ property: 'og:title', content: title })
-    }
-
-    if (description) {
-      this.metaService.updateTag({ name: 'description', content: description })
+  public setMetaTags() {
+    if (this.titleTag) {
+      this.metaService.updateTag({ name: 'title', content: this.titleTag })
       this.metaService.updateTag({
-        property: 'og:description',
-        content: description,
+        property: 'og:title',
+        content: this.titleTag,
       })
-    }
-
-    if (keywords) {
-      this.metaService.updateTag({ name: 'keywords', content: keywords })
-    }
-
-    if (url) {
-      this.metaService.updateTag({
-        property: 'og:url',
-        content: this.DOMAIN + '/' + url,
-      })
-    }
-
-    if (image) {
-      this.metaService.updateTag({ property: 'og:image', content: image })
-    }
-
-    if (canonical) {
-      this.canonicalLink = this.document.createElement('link')
-      this.canonicalLink.setAttribute('rel', 'canonical')
-      this.canonicalLink.setAttribute('href', this.DOMAIN + '/' + canonical)
-      this.document.head.append(this.canonicalLink)
     }
   }
 
