@@ -6,7 +6,7 @@ export interface News {
   subtitle: string
   description: string
   date: Date
-  tags: undefined | NgIterable<string>
+  tags: undefined | NgIterable<string> | Array<string>
 }
 
 export interface LastNews {

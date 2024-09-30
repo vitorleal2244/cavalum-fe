@@ -10,6 +10,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router'
 import { News, LastNews } from '../news.interface'
 import { CoreService } from 'src/app/core/services/core.service'
 import { map, Observable } from 'rxjs'
+import { Meta } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-news-detail',
@@ -29,7 +30,8 @@ export class NewsDetailComponent implements OnInit {
     private readonly activedRoute: ActivatedRoute,
     private readonly newsService: NewsService,
     private readonly coreService: CoreService,
-    private readonly changeDetector: ChangeDetectorRef
+    private readonly changeDetector: ChangeDetectorRef,
+    private metaService: Meta
   ) {}
 
   ngOnInit() {
@@ -97,6 +99,18 @@ export class NewsDetailComponent implements OnInit {
         )
         .subscribe((res: News) => {
           this.newsDetail = res
+
+          // Set metatags
+          this.coreService.setMetaTags(
+            this.newsDetail.title,
+            this.newsDetail.subtitle,
+            '',
+            'news/' + this.newsID,
+            this.currentImage,
+            'news/' + this.newsID
+          )
+
+          console.log(this.metaService.getTag("name='title'"))
         })
     }
   }

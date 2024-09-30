@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core'
 import { TranslateService, TranslateModule } from '@ngx-translate/core'
 import { NgxSpinnerModule } from 'ngx-spinner'
-import { Router, RouterOutlet } from '@angular/router'
+import { RouterOutlet } from '@angular/router'
 import { FooterComponent } from './core/components/footer/footer.component'
 import { TabBarComponent } from './core/components/tab-bar/tab-bar.component'
 import { CommonModule } from '@angular/common'
 import { LoadingService } from './core/services/loading.service'
 import { delay } from 'rxjs'
-import { HttpRequestInterceptor } from './http-request.interceptor'
-import { HTTP_INTERCEPTORS } from '@angular/common/http'
 
 /**
  * App Component
