@@ -1,0 +1,100 @@
+.testimonials {
+    background-color: $white;
+    padding: $sector_separator_padding 0 0;
+  
+    h1 {
+      text-align: center;
+      padding-bottom: 40px;
+      color: $white;
+    }
+  
+    &__background {
+      background-image: url('../../../../assets/images/home_background.JPG');
+      height: 100%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 70px;
+    }
+  
+    &__header {
+      padding-bottom: 10px;
+    }
+  
+    &__content {
+      position: relative;
+      padding: 20px 90px 0 !important;
+      padding-bottom: 40px !important;
+      height: 90px;
+      text-align: center;
+  
+      p {
+        font-style: italic;
+      }
+    }
+  
+    &__content::before {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: 20px;
+      left: 10px;
+      background-image: url('../../../../assets/images/quote.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 0.1;
+    }
+  
+    &__content::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: 20px;
+      right: 10px;
+      background-image: url('../../../../assets/images/double-quotes.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: 0.1;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .testimonials {
+
+        &__background {
+            padding: 70px 20px;
+        }
+  
+        .testimonial {
+            margin-bottom: 10px;
+        }
+    
+        &__content {
+            height: auto;
+        }
+    }
+}
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    .testimonials {
+
+        &__background {
+            padding: 70px 20px;
+        }
+  
+        .testimonial {
+            margin-bottom: 10px;
+        }
+    
+        &__content {
+            height: auto;
+        }
+    }
+}

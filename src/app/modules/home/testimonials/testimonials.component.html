@@ -1,0 +1,18 @@
+<div class="testimonials">
+    <div class="testimonials__background">
+        <h1>O que dizem sobre nós?</h1>
+        <div class="row">
+        <div *ngFor="let testimonial of testimonials" class="col-sm-4">
+            <mat-card class="testimonial" appearance="outlined">
+                <mat-card-header class="testimonials__header">
+                    <mat-card-title>{{ testimonial.author }}</mat-card-title>
+                    <mat-card-subtitle>{{ testimonial.position }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="testimonials__content">
+                    <p>{{ testimonial.text }}</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        </div>
+    </div>
+</div>

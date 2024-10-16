@@ -1,16 +1,22 @@
-<div class="tab-bar-wrapper desktop">
+<div 
+  class="tab-bar-wrapper desktop"
+  #stickyMenu
+  [ngClass] = "{ 'sticky' : sticky || !isHome }"
+>
   <div class="row">
-    <div class="col-6 tab-bar__logo">
+    <div class="col-3 tab-bar__logo">
       <div class="logo-wrapper">
-        <img
-          src="/assets/images/logo.png"
-          alt="Logo"
-          title="Logo"
-          class="logo"
-        />
+        <a routerLink="/">
+          <img
+            src="/assets/images/logo_black.png"
+            alt="Logo"
+            title="Logo"
+            class="logo"
+          />
+        </a>
       </div>
     </div>
-    <div class="col-6 tab-bar__menu">
+    <div class="col-9 tab-bar__menu">
       <nav>
         <ul>
           <li>
@@ -18,7 +24,6 @@
               routerLink="/"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
-              (activate)="onActivate($event)"
             >Home
             </a>
           </li>
@@ -26,7 +31,6 @@
             <a
               routerLink="/about"
               routerLinkActive="active"
-              (activate)="onActivate($event)"
             >
               Sobre
             </a>
@@ -35,7 +39,6 @@
             <a
               routerLink="/trails"
               routerLinkActive="active"
-              (activate)="onActivate($event)"
             >
               Trilhos
             </a>
@@ -44,7 +47,6 @@
             <a
               routerLink="/news"
               routerLinkActive="active"
-              (activate)="onActivate($event)"
             >
               Noticias
             </a>
@@ -53,7 +55,6 @@
             <a
               routerLink="/contact"
               routerLinkActive="active"
-              (activate)="onActivate($event)"
             >
               Contato
             </a>
@@ -62,7 +63,6 @@
             <a
               routerLink="/become-member"
               routerLinkActive="active"
-              (activate)="onActivate($event)"
             >
               Tornar-se sócio
             </a>
@@ -81,7 +81,6 @@
           routerLink="/"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
-          (activate)="onActivate($event)"
         >
           <mat-icon aria-hidden="false" aria-label="Home icon" fontIcon="home"></mat-icon>
         </a>
@@ -90,7 +89,6 @@
         <a
           routerLink="/about"
           routerLinkActive="active"
-          (activate)="onActivate($event)"
         >
           <mat-icon aria-hidden="false" aria-label="Handshake icon" fontIcon="handshake"></mat-icon>
         </a>
@@ -99,7 +97,6 @@
         <a
           routerLink="/trails"
           routerLinkActive="active"
-          (activate)="onActivate($event)"
         >
           <mat-icon aria-hidden="false" aria-label="Trails icon" fontIcon="hiking"></mat-icon>
         </a>
@@ -108,7 +105,6 @@
         <a
           routerLink="/news"
           routerLinkActive="active"
-          (activate)="onActivate($event)"
         >
           <mat-icon aria-hidden="false" aria-label="News icon" fontIcon="newspaper"></mat-icon>
         </a>
@@ -117,7 +113,6 @@
         <a
           routerLink="/contact"
           routerLinkActive="active"
-          (activate)="onActivate($event)"
         >
           <mat-icon aria-hidden="false" aria-label="Contact icon" fontIcon="call"></mat-icon>
         </a>
@@ -126,7 +121,6 @@
         <a
           routerLink="/become-member"
           routerLinkActive="active"
-          (activate)="onActivate($event)"
         >
           <mat-icon aria-hidden="false" aria-label="Member icon" fontIcon="person"></mat-icon>
         </a>

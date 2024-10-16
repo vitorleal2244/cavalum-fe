@@ -1,0 +1,32 @@
+<div class="our-actions">
+    <div class="row">
+    <div class="col-sm-5 our-actions__image desktop">
+        <img
+        src="../../../assets/images/img1.jpg"
+        alt="Imagem grupo"
+        title="Imagem grupo"
+        />
+    </div>
+    <div class="col-sm-7">
+        <div class="our-actions__options">
+            <div class="our-actions__title">
+                <h1>Nossas ações</h1>
+            </div>
+            <div class="our-actions__items">
+                <ul>
+                <li *ngFor="let action of actions" class="action-item">
+                    <div class="action-info">
+                    <h3>{{ action.title }}</h3>
+                    <p>{{ action.subtitle }}</p>
+                    <small>Desde {{ action.price }}€</small>
+                    </div>
+                    <div class="action-link">
+                    <button mat-button class="button primary" (click)="openDialogEmitter()">Agendar</button>
+                    </div>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

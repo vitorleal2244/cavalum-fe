@@ -4,35 +4,51 @@
   (closeViewer)='closeImageViewer($event)'
 />
 <main class="container page-content">
-  <div id="about">
+  <div class="about">
     <div class="page-header">
       <div class="page-header__title">
-        <h1>Sobre o Cavalum</h1>
+        <h1>Cavalum, é hoje uma associação para a defesa do Ambiente!</h1>
       </div>
-      <div class="page-header__subtitle">
+      <div class="page-header__subtitle page-header__subtitle--about">
         <p>
-          Somos uma equipe de voluntários de uma associação que tem como objetivo a defesa do meio ambiente.
-          Trabalhamos em diversas frentes, desde campanhas de conscientização até ações práticas na comunidade.
+          O projeto Cavalum iniciou a sua caminhada na conservação e preservação do meio ambiente em Março de 2020.
+        </p>
+        <p>
+          Foi nessa altura, durante o começo da pandemia, que um grupo de amigos, colegas ou desconhecidos, mas, pessoas extraordinárias se juntaram de forma totalmente voluntária para fazer o bem!
+        </p>
+        <p>
+          Durante os passeios higiénicos, foram encontrados muitos resíduos no leito e nas margens do rio e verificou se que os caminhos antigos existentes estavam intransitáveis.
+        </p>
+        <p>
+          Era notório que o ecossistema daquele espaço natural estava bastante alterado, desequilibrado e fragilizado.
+        </p>
+        <p>
+          Iniciaram-se os trabalhos, recolhendo resíduos junto das margens e, de seguida, realizaram-se ações de limpeza de vegetação densa nos poucos percursos existentes.
+        </p>
+        <p>
+          Em fevereiro de 2022 com um grupo de trabalho sólido deu-se um grande passo nesta caminhada e tornamo-nos a <br><br><b>Associação para a Defesa do Ambiente Cavalum</b>
         </p>
       </div>
     </div>
     <div class="about__values">
       <app-image-text
         [text_side]='"left"'
-        [title]="'Nosso trabalho'"
-        [description]="'Somos uma equipe dedicada à preservação do meio ambiente. Atuamos em diversas áreas, como reflorestamento,
-        reciclagem de resíduos, monitoramento de áreas degradadas, entre outras. Nossos projetos são desenvolvidos em
-        parceria com a comunidade e entidades governamentais.'"
+        [title]="'Missão'"
+        [description]="'Somos uma equipa dedicada à preservação do meio ambiente. Atuamos em diversas áreas, como
+        reflorestamento, reciclagem de resíduos, monitoramento de áreas degradadas, educação ambiental, entre outras.
+        Os nossos projetos são desenvolvidos em parceria com a comunidade, entidades públicas e privadas.'"
         [image]="'../../../assets/images/about.jpg'"
       />
+
       <app-image-text
         [text_side]='"right"'
         [title]="'Voluntariado'"
-        [description]="'Acreditamos que a mudança começa por cada um de nós. Por isso, oferecemos oportunidades para que pessoas engajadas
-        possam contribuir com nossas ações. Seja participando de mutirões de limpeza ou colaborando com nossos projetos, o
-        voluntariado é fundamental para o sucesso de nossa missão.'"
+        [description]="'Acreditamos que a mudança começa por cada um de nós. Por isso, oferecemos oportunidades para que as
+        pessoas que nos seguem possam contribuir com as nossas ações. Seja a participar ativamente em ações de
+        limpeza ou colaborando com nossos projetos, o voluntariado é fundamental para o sucesso de nossa missão.'"
         [image]="'../../../assets/images/about2.jpg'"
       />
+      
       <app-image-text
         [text_side]='"left"'
         [title]="'Transparência'"

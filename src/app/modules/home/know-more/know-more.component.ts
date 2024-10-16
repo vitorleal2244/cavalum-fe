@@ -1,0 +1,20 @@
+import { Component } from '@angular/core'
+import { MatButtonModule } from '@angular/material/button'
+import { SvgManChildComponent } from 'dist/assets/images/svg/man_child/svg_man_child.component'
+import { ManWalkingComponent } from 'dist/assets/images/svg/man_walking/man_walking.component'
+import { SvgMapComponent } from 'dist/assets/images/svg/map/svg_map.component'
+import { SvgMedicalCaseComponent } from 'dist/assets/images/svg/medical_case/svg_medical_case.component'
+
+@Component({
+  selector: 'app-know-more',
+  templateUrl: './know-more.component.html',
+  standalone: true,
+  imports: [
+    ManWalkingComponent,
+    SvgMedicalCaseComponent,
+    SvgManChildComponent,
+    SvgMapComponent,
+    MatButtonModule,
+  ],
+})
+export class KnowMoreComponent {}

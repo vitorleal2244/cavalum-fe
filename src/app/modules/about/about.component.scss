@@ -1,20 +1,12 @@
 @import '../../styles/abstracts/_variables';
 
-#about {
+.about {
 
-  .about {
-
-    &__values {
-      padding-bottom: $sector_separator_padding;
-    }
-
-    &__gallery {
-      padding-bottom: $sector_separator_padding;
-    }
+  &__values {
+    padding-bottom: $sector_separator_padding;
   }
-}
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  
+  &__gallery {
+    padding-bottom: $sector_separator_padding;
+  }
 }

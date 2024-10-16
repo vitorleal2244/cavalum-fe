@@ -1,0 +1,59 @@
+.slider-desktop {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      z-index: -1;
+    }
+  
+    .slider-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+  
+  .slider-mobile {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../../../assets/images/about.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+  
+    &__overlay {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, .3);
+    }
+  
+    &__intro {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 70px;
+    }
+  
+    &__image {
+      width: 50%;
+  
+      img {
+        width: 100%;
+      }
+    }
+  }

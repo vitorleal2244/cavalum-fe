@@ -19,11 +19,20 @@
 
   &__title {
     padding-bottom: $gap;
+    text-align: center;
   }
 
   &__subtitle {
     width: 40%;
     text-align: center;
+
+    &--about {
+
+      p {
+        padding-bottom: 10px !important;
+        font-size: 15px !important; 
+      }
+    }
   }
 }
 

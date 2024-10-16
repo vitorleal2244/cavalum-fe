@@ -1,112 +1,14 @@
-<app-slider>
-  <div id="slider-buttons">
-    <a mat-stroked-button class="button primary" routerLink="/about">
-      Saber mais
-    </a>
-  </div>
-</app-slider>
-<div class="slider-mobile mobile">
-  <div class="slider-mobile__overlay"></div>
-  <div class="slider-mobile__intro">
-    <div class="slider-mobile__image">
-      <img src="../../../assets/images/logo.png" alt="Cavalum" title="Cavalum" />
-    </div>
-    <div class="slider-mobile__buttons">
-      <button mat-button class="button primary get-started" (click)="scrollTo(ouractions)">Avançar</button>
-    </div>
-  </div>
-</div>
+<app-slider (clickSlider)="scrollTo(ouractions)"></app-slider>
 <div class="container">
-  <section #ouractions id="home-our-actions">
-    <div class="our-actions-wrapper">
-      <div class="row">
-        <div class="col-sm-5 our-actions-image desktop">
-          <img
-            src="../../../assets/images/img1.jpg"
-            alt="Imagem grupo"
-            title="Imagem grupo"
-          />
-        </div>
-        <div class="col-sm-7">
-          <div class="our-actions">
-            <div class="our-actions__title">
-              <h1>Nossas ações</h1>
-            </div>
-            <div class="our-actions__list">
-              <ul>
-                <li *ngFor="let action of actions" class="action-item">
-                  <div class="action-info">
-                    <h3>{{ action.title }}</h3>
-                    <p>{{ action.subtitle }}</p>
-                    <small>Desde {{ action.price }}€</small>
-                  </div>
-                  <div class="action-link">
-                    <button mat-button class="button primary" (click)="openDialog()">Agendar</button>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section #ouractions>
+    <app-our-actions (openDialogHandler)="openDialog()" [actions]="actions"></app-our-actions>
   </section>
   <section id="home-know-more">
-    <div class="know-more-wrapper">
-      <h1>Fique por dentro</h1>
-      <p class="subtitle">
-        Mantenha-se atualizado sobre as últimas notícias e informações sobre o
-        meio ambiente e a sustentabilidade. Clique aqui para ler mais.
-      </p>
-      <div class="know-more__topics">
-        <ul>
-          <li>
-            <div class="know-more__icon">
-              <app-man-walking-svg [size]="'75px'" />
-            </div>
-            Participe
-          </li>
-          <li>
-            <div class="know-more__icon">
-              <app-svg-medical-case [size]="'100px'" />
-            </div>
-            Contribua
-          </li>
-          <li>
-            <div class="know-more__icon">
-              <app-svg-man-child [size]="'100px'" />
-            </div>
-            Transforme
-          </li>
-          <li>
-            <div class="know-more__icon">
-              <app-svg-map [size]="'100px'" />
-            </div>
-            Seja a mudança
-          </li>
-        </ul>
-      </div>
-      <button mat-button class="button primary-black">Saiba como</button>
-    </div>
+    <app-know-more></app-know-more>
   </section>
 </div>
-<section class="home-testimonials">
-  <div class="background">
-    <h1>O que dizem sobre nós?</h1>
-    <div class="row">
-      <div *ngFor="let testimonial of testimonials" class="col-sm-4">
-        <mat-card class="testimonial" appearance="outlined">
-          <mat-card-header class="home-testimonials__header">
-            <mat-card-title>{{ testimonial.author }}</mat-card-title>
-            <mat-card-subtitle>{{ testimonial.position }}</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content class="home-testimonials__content">
-            <p>{{ testimonial.text }}</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
-  </div>
+<section>
+  <app-testimonials [testimonials]="testimonials"></app-testimonials>
 </section>
 <section id="home-news">
   <div class="container">

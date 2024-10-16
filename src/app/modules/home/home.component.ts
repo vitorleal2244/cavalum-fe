@@ -8,12 +8,6 @@
 
 import { Component, OnInit } from '@angular/core'
 import { NewsComponent } from '../../core/components/news/news.component'
-import { TestimonialComponent } from '../../core/components/testimonial/testimonial.component'
-import { SvgMapComponent } from '../../../assets/images/svg/map/svg_map.component'
-import { SvgManChildComponent } from '../../../assets/images/svg/man_child/svg_man_child.component'
-import { SvgMedicalCaseComponent } from '../../../assets/images/svg/medical_case/svg_medical_case.component'
-import { ManWalkingComponent } from '../../../assets/images/svg/man_walking/man_walking.component'
-import { SliderComponent } from '../../core/components/slider/slider.component'
 import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
 import { CommonModule } from '@angular/common'
@@ -25,6 +19,12 @@ import { News } from '../news/news.interface'
 import { map, Observable } from 'rxjs'
 import { NewsService } from '../news/news.service'
 import { CoreService } from 'src/app/core/services/core.service'
+import { SliderComponent } from './slider/slider.component'
+import { OurActionsComponent } from './our-actions/our-actions.component'
+import { Action } from './our-actions/action.interface'
+import { KnowMoreComponent } from './know-more/know-more.component'
+import { TestimonialsComponent } from './testimonials/testimonials.component'
+import { Testimonial } from './testimonials/testimonial.interface'
 
 /**
  * Home Component
@@ -35,25 +35,22 @@ import { CoreService } from 'src/app/core/services/core.service'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
   standalone: true,
   imports: [
     SliderComponent,
-    ManWalkingComponent,
-    SvgMedicalCaseComponent,
-    SvgManChildComponent,
-    SvgMapComponent,
-    TestimonialComponent,
+    OurActionsComponent,
+    KnowMoreComponent,
     NewsComponent,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
     CommonModule,
     RouterLink,
+    TestimonialsComponent,
   ],
 })
 export class HomeComponent implements OnInit {
-  public testimonials = [
+  public testimonials: Testimonial[] = [
     {
       id: 1,
       author: 'Joana',
@@ -74,30 +71,30 @@ export class HomeComponent implements OnInit {
     },
   ]
 
-  public actions = [
+  public actions: Action[] = [
     {
       id: 1,
       title: 'Festa de aniversário',
       subtitle: 'Oferecido diariamente',
-      price: '80',
+      price: 80,
     },
     {
       id: 2,
       title: 'Eventos de familia',
       subtitle: 'Oferecido diariamente',
-      price: '80',
+      price: 80,
     },
     {
       id: 3,
       title: 'Eventos de empresa',
       subtitle: 'Oferecido diariamente',
-      price: '80',
+      price: 80,
     },
     {
       id: 4,
       title: 'Eventos de trailing',
       subtitle: 'Oferecido diariamente',
-      price: '80',
+      price: 80,
     },
   ]
 

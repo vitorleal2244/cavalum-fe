@@ -39,6 +39,8 @@ $cavalum-theme: mat.define-light-theme((
 @import './app/styles/components/_elements';
 @import './app/styles/components/_card';
 
+@import './app/styles/modules.scss';
+
 /* You can add global styles to this file, and also import other style files */
 * {
   box-sizing: border-box;
