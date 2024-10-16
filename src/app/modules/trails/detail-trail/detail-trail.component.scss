@@ -56,8 +56,14 @@
         font-size: 13px;
     }
 
-    &__tags {
-        padding: 20px 20px 50px;
+    &__image-map {
+        width: 100%;
+        padding-bottom: 30px;
+        text-align: center;
+
+        img {
+            width: 50%;
+        }
     }
 
     &__description {
@@ -69,16 +75,8 @@
         }
     }
 
-    &__trail-view {
-        padding: 20px;
-        width: 100%;
-        height: 300px;
-
-        img {
-            height: 100%;
-            border: 1px solid $green;
-            border-radius: 2px;
-        }
+    &__tags {
+        padding: 20px 20px 50px;
     }
 
     &__other-trails {
