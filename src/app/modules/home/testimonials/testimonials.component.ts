@@ -6,6 +6,7 @@ import { Testimonial } from './testimonial.interface'
 @Component({
   selector: 'app-testimonials',
   templateUrl: './testimonials.component.html',
+  styleUrls: ['./testimonials.component.scss'],
   standalone: true,
   imports: [MatCardModule, CommonModule],
 })

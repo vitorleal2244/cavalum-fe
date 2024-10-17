@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button'
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
+  styleUrls: ['./slider.component.scss'],
   standalone: true,
   imports: [MatButtonModule],
 })

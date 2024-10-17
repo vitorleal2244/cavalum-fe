@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button'
 @Component({
   selector: 'app-our-actions',
   templateUrl: './our-actions.component.html',
+  styleUrls: ['our-actions.component.scss'],
   standalone: true,
   imports: [CommonModule, MatButtonModule],
 })

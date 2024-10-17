@@ -1,77 +1,67 @@
-#home-know-more {
-    margin-top: $sector_separator_padding;
-  
-    .know-more-wrapper {
+@import '../../../styles/abstracts/_variables';
+
+.know-more {
+  text-align: center;
+  margin-top: $sector_separator_padding;
+
+  p.subtitle {
+    padding: $gap $gap_sides_max;
+  }
+
+  &__topics {
+    padding: 0 $gap_sides_max $gap;
+
+    ul {
+      list-style-type: none;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       text-align: center;
-  
-      p.subtitle {
-        padding: $gap $gap_sides_max;
-      }
-  
-      .know-more {
-  
-        &__topics {
-          padding: 0 $gap_sides_max $gap;
-  
-          ul {
-            list-style-type: none;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            text-align: center;
-          }
-        }
-      }
     }
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .know-more-wrapper {
+  .know-more {
 
-        h1 {
-          padding: 0 40px !important;
-        }
-    
-        .subtitle {
-          padding: 20px 40px 0 !important;
-        }
-    
-        .know-more {
-    
-          &__topics {
-            padding: 0 0 30px !important;
-    
-            ul {
-              flex-direction: column !important;
-            }
-          }
-        }
+    h1 {
+      padding: 0 40px !important;
     }
+
+    .subtitle {
+      padding: 20px 40px 0 !important;
+    }
+
+    &__topics {
+      padding: 0 0 30px !important;
+
+      ul {
+        flex-direction: column !important;
+      }
+    }
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 767px) {
-    .know-more-wrapper {
+  .know-more {
 
-        h1 {
-          padding: 0 40px !important;
-        }
-    
-        .subtitle {
-          padding: 20px 40px 0 !important;
-        }
-    
-        .know-more {
-    
-          &__topics {
-            padding: 0 0 30px !important;
-    
-            ul {
-              flex-direction: column !important;
-            }
-          }
-        }
+    h1 {
+      padding: 0 40px !important;
     }
+
+    .subtitle {
+      padding: 20px 40px 0 !important;
+    }
+
+    &__topics {
+      padding: 0 0 30px !important;
+
+      ul {
+        flex-direction: column !important;
+      }
+    }
+  }
 }

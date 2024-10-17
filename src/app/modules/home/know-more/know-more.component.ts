@@ -8,6 +8,7 @@ import { SvgMedicalCaseComponent } from 'dist/assets/images/svg/medical_case/svg
 @Component({
   selector: 'app-know-more',
   templateUrl: './know-more.component.html',
+  styleUrls: ['know-more.component.scss'],
   standalone: true,
   imports: [
     ManWalkingComponent,
