@@ -25,6 +25,7 @@ import { Action } from './our-actions/action.interface'
 import { KnowMoreComponent } from './know-more/know-more.component'
 import { TestimonialsComponent } from './testimonials/testimonials.component'
 import { Testimonial } from './testimonials/testimonial.interface'
+import { LastNewsComponent } from "./last-news/last-news.component";
 
 /**
  * Home Component
@@ -47,7 +48,8 @@ import { Testimonial } from './testimonials/testimonial.interface'
     CommonModule,
     RouterLink,
     TestimonialsComponent,
-  ],
+    LastNewsComponent
+],
 })
 export class HomeComponent implements OnInit {
   public testimonials: Testimonial[] = [

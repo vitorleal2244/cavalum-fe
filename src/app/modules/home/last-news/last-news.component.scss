@@ -1,0 +1,21 @@
+@import '../../../styles/abstracts/_variables';
+
+.last-news {
+    text-align: center;
+    padding: $sector_separator_padding 0;
+
+    &__title {
+    padding: $gap 0;
+    }
+
+    &__subtitle {
+    padding: 0 $gap_sides $gap;
+    }
+
+    &__content {
+    padding: $gap;
+    color: #FFFFFF;
+    text-align: left;
+    }
+}
+  
