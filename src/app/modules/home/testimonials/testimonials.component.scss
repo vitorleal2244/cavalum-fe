@@ -100,3 +100,20 @@
         }
     }
 }
+
+@media only screen and (min-width: 768px) {
+  .testimonials {
+
+    &__background {
+        padding: 70px 20px;
+    }
+
+    .testimonial {
+        margin-bottom: 10px;
+    }
+
+    &__content {
+        height: auto;
+    }
+  } 
+}

@@ -6,7 +6,66 @@
     padding-bottom: $sector_separator_padding;
   }
 
+  .values {
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    &--left {
+      align-items: flex-start;
+
+      .values__text {
+        background: linear-gradient(to right, $green 50%, transparent);
+        text-align: left;
+      }
+    }
+
+    &--right {
+      align-items: flex-end;
+
+      .values__text {
+        background: linear-gradient(to left, $green 50%, transparent);
+        text-align: right;
+      }
+    }
+
+    &__text {
+      width: 50%;
+      padding: 100px 20px;
+      color: $white;
+    }
+
+    &__title {
+      font-size: 30px;
+      padding-bottom: 20px;
+    }
+  }
+
   &__gallery {
     padding-bottom: $sector_separator_padding;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .about {
+
+    .values {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .about {
+
+    .values {
+      margin-bottom: 0;
+    }
   }
 }

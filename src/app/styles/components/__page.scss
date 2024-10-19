@@ -91,3 +91,30 @@
     padding-top: 10px;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .content {
+    padding-bottom: 20px;
+  }
+
+  .page-content { 
+    padding-top: 50px;
+  }
+
+  .page-header {
+    padding-bottom: 30px;
+
+    &__title {
+      padding: 50px 0 20px;
+      text-align: center;
+    }
+
+    &__subtitle {
+      width: 90%;
+    }
+  }
+
+  .page-trail-detail-content {
+    padding-top: 10px;
+  }
+}

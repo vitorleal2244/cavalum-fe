@@ -31,31 +31,47 @@
       </div>
     </div>
     <div class="about__values">
-      <app-image-text
-        [text_side]='"left"'
-        [title]="'Missão'"
-        [description]="'Somos uma equipa dedicada à preservação do meio ambiente. Atuamos em diversas áreas, como
-        reflorestamento, reciclagem de resíduos, monitoramento de áreas degradadas, educação ambiental, entre outras.
-        Os nossos projetos são desenvolvidos em parceria com a comunidade, entidades públicas e privadas.'"
-        [image]="'../../../assets/images/about.jpg'"
-      />
-
-      <app-image-text
-        [text_side]='"right"'
-        [title]="'Voluntariado'"
-        [description]="'Acreditamos que a mudança começa por cada um de nós. Por isso, oferecemos oportunidades para que as
-        pessoas que nos seguem possam contribuir com as nossas ações. Seja a participar ativamente em ações de
-        limpeza ou colaborando com nossos projetos, o voluntariado é fundamental para o sucesso de nossa missão.'"
-        [image]="'../../../assets/images/about2.jpg'"
-      />
-      
-      <app-image-text
-        [text_side]='"left"'
-        [title]="'Transparência'"
-        [description]="'Acreditamos que a transparência é fundamental para a construção de uma sociedade mais justa e consciente.
-        Por isso, prestamos contas de nossas ações e recursos de forma clara e objetiva.'"
-        [image]="'../../../assets/images/about3.jpg'"
-      />
+      <div class="values values--left" style="background-image: url('../../../assets/images/about.jpg');">
+        <div class="values__text">
+          <div class="values__title">
+            Missão
+          </div>
+          <div class="values__subtitle">
+            <p>
+              Somos uma equipa dedicada à preservação do meio ambiente. Atuamos em diversas áreas, como
+              reflorestamento, reciclagem de resíduos, monitoramento de áreas degradadas, educação ambiental, entre outras.
+              Os nossos projetos são desenvolvidos em parceria com a comunidade, entidades públicas e privadas.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="values values--right" style="background-image: url('../../../assets/images/about2.jpg');">
+        <div class="values__text">
+          <div class="values__title">
+            Voluntariado
+          </div>
+          <div class="values__subtitle">
+            <p>
+              Acreditamos que a mudança começa por cada um de nós. Por isso, oferecemos oportunidades para que as
+              pessoas que nos seguem possam contribuir com as nossas ações. Seja a participar ativamente em ações de
+              limpeza ou colaborando com nossos projetos, o voluntariado é fundamental para o sucesso de nossa missão.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="values values--left" style="background-image: url('../../../assets/images/about3.jpg');">
+        <div class="values__text">
+          <div class="values__title">
+            Transparência
+          </div>
+          <div class="values__subtitle">
+            <p>
+              Acreditamos que a transparência é fundamental para a construção de uma sociedade mais justa e consciente.
+              Por isso, prestamos contas de nossas ações e recursos de forma clara e objetiva.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="about__gallery">
       <app-gallery [photos]='photos' (photoClick)="getPhoto($event)" />
