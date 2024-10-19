@@ -13,5 +13,5 @@ import { News } from '../../news/news.interface'
   imports: [MatCardModule, RouterLink, CommonModule],
 })
 export class LastNewsComponent {
-  @Input() lastNews!: Observable<News[]>
+  @Input({ required: true }) lastNews!: Observable<News[]>
 }
