@@ -5,17 +5,36 @@
     padding: $sector_separator_padding 0;
 
     &__title {
-    padding: $gap 0;
+        padding: 0 20px;
     }
 
     &__subtitle {
-    padding: 0 $gap_sides $gap;
+        padding: 0 $gap_sides $gap;
     }
 
     &__content {
-    padding: $gap;
-    color: #FFFFFF;
-    text-align: left;
+        padding: 0 $gap $gap;
+        color: #FFFFFF;
+        text-align: left;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .last-news {
+
+        &__subtitle {
+            padding: 20px 40px 0;
+        }
     }
 }
   
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    .last-news {
+
+        &__subtitle {
+            padding: 20px 40px 0;
+        }
+    }
+}
