@@ -64,18 +64,12 @@
             <ul *ngIf="lastNews">
               <li class="other-news__item" *ngFor="let new of lastNews|async">
                 <a routerLink="/news/{{ new.id }}" (click)="onChangeNews(new.id)">
-                  <div class="row">
-                    <div class="col-sm-2">
-                      <div class="other-news__item__image">
-                        <img src="../../../../assets/images/news/news_{{ new.id }}.jpg" alt="{{ new.title }}" title="{{ new.title }}" />
-                      </div>
-                    </div>
-                    <div class="col-sm-10">
-                      <div class="other-news__item__title">
-                        <h6>{{ new.title }}</h6>
-                        <small>{{ new.date }}</small>
-                      </div>
-                    </div>
+                  <div class="other-news__item__image">
+                    <img src="../../../../assets/images/news/news_{{ new.id }}.jpg" alt="{{ new.title }}" title="{{ new.title }}" />
+                  </div>
+                  <div class="other-news__item__title">
+                    <h6>{{ new.title }}</h6>
+                    <small>{{ new.date }}</small>
                   </div>
                 </a>
               </li>

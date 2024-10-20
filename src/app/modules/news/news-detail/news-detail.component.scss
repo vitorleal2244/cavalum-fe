@@ -121,9 +121,12 @@
 
       a {
         color: $black;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
 
         .other-news__item__image {
-          width: 100%;
+          width: auto;
 
           img {
             height: 50px;
@@ -140,10 +143,8 @@
   .news-detail {
     padding: 0;
 
-    &__title {
-      padding: 0 20px;
-    }
-
+    &__title,
+    &__time,
     &__subtitle {
       padding: 0 20px;
     }
@@ -175,10 +176,8 @@
   .news-detail {
     padding: 0;
 
-    &__title {
-      padding: 0 20px;
-    }
-
+    &__title,
+    &__time,
     &__subtitle {
       padding: 0 20px;
     }
