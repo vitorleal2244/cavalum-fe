@@ -56,6 +56,10 @@
 
     .values {
       margin-bottom: 0;
+
+      &__text {
+        width: 80%;
+      }
     }
   }
 }
