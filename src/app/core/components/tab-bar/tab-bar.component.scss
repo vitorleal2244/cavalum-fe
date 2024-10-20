@@ -2,10 +2,11 @@
 
 .tab-bar-wrapper {
   background-color: transparent;
-  padding: 0 200px;
   position: fixed;
   width: 100%;
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   z-index: 100;
 
   &.hidden {
@@ -22,7 +23,6 @@
       padding: 20px;
       border-radius: 50%;
       margin-top: 20px;
-      margin-left: 80px;
 
       img {
         max-width: 100%;
@@ -128,12 +128,35 @@
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-}
-
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  
+@media only screen and (min-width: 992px) and (max-width: 1760px) {
+  .tab-bar-wrapper {
+    background-color: $white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+    .tab-bar__logo {
+
+      .logo-wrapper {
+        position: absolute;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        background-color: $white;
+      }
+    }
+
+    .tab-bar__menu {
+
+      nav {
+
+        ul {
+
+          li {
+
+            a.active {
+              border-bottom: 3px solid $green;
+            }
+          }
+        }
+      }
+    }
+  }
 }
